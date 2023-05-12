@@ -1,0 +1,130 @@
+
+
+.row{
+    margin-top: 20px;    
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #BD4242;
+}
+
+body {
+    background-color: #EBEBEB;
+}
+
+
+.paper1 {
+    padding: 10px;
+    background-color: #EBEBEB;
+}
+
+.card {
+    background-color: #6B6B6B;
+    border-color: #6B6B6B;
+}
+
+.poke-card {
+    padding: 10px;
+}
+
+iframe {
+    border-radius: 5px;
+}
+
+.hero {
+    top:0;
+    background-position: center;
+    position: fixed;
+    height: 100vh;
+    z-index: -1;
+    margin-top: 60px;
+}
+
+video {
+    width: 100%;
+}
+
+.image-wrapper {
+    max-width: 100%;
+    height: 23vh;
+}
+
+.modal-pokemon {
+    transform: scaleX(-1);
+}
+
+@media screen and (min-width:576px) {
+    .carousel-inner{
+        display: flex;
+    }
+    .carousel-item {
+        display: block;
+        margin-right:0;
+        flex: 0 0 calc(100%/3);
+    }
+}
+
+.carousel-item {
+    filter: brightness(80%);
+}
+
+
+.carousel-item:hover {
+    filter: brightness(100%);
+}
+
+#desctiption {
+    z-index: 1;
+}
+
+#moves {
+    z-index: 1;
+}
+
+#attributes {
+    z-index: 1;
+}
+
+.mytabs {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
+
+.mytabs input[type='radio'] {
+    display: none;
+}
+
+.mytabs label {
+    padding:10px;
+    background-color: #736dda;  
+    font-weight: bold;
+}
+
+.mytabs .tab {
+    width: 100%;
+    height: 350px;
+    padding: 20px;
+    background-color: aliceblue;
+    order: 1;
+    border-radius: 5px;
+    display: none;
+}
+
+.mytabs input[type='radio']:checked + label + .tab {
+    display: block;
+}
+
+.mytabs input[type='radio']:checked + label {
+    background-color: aliceblue;
+}
+
+/* .mytabs .tab .table{
+    height: 300px;
+} */

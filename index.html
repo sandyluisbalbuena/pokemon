@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="icon" href="https://pngimg.com/uploads/pokemon_logo/small/pokemon_logo_PNG12.png">
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+              <a class="navbar-brand" href="#">
+                <img src="assets/images/pokemonBrandName.png" alt="" width="100px">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pokedex.html">PokeDex</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">PokeShop</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">link1</a></li>
+                      <li><a class="dropdown-item" href="#">link2</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+
+    </header>
+
+    <main>
+
+        <div class="hero">
+            <video autoplay muted loop>
+                <source src="assets/video/pokemonVideo1_edit3.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div style="height: 100vh;"></div>
+
+        <div class="paper1">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card p-4">
+                            <div id="carouselExampleInterval" class="carousel" data-bs-ride="carousel"  style="text-align: center;">
+                                <div class="carousel-inner">
+
+                                    <div id="item1" class="carousel-item" data-name="Bulbasaur" data-type="grass" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <div class="card poke-card">
+                                            <div class="image-wrapper">
+                                                <img src="https://www.professorlotus.com/Sprites/Bulbasaur.gif" height="100%" width="50%"  alt="...">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Bulbasaur</h5>
+                                                <span class="badge bg-success">Grass</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="item2" class="carousel-item" data-name="Charmander" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <div class="card poke-card">
+                                            <div class="image-wrapper">
+                                                <img src="https://www.professorlotus.com/Sprites/Charmander.gif" height="100%" width="50%" alt="...">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Charmander</h5>
+                                                <span class="badge bg-danger">Fire</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="item3" class="carousel-item" data-name="Squirtle" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <div class="card poke-card">
+                                            <div class="image-wrapper">
+                                                <img src="https://www.professorlotus.com/Sprites/Squirtle.gif" height="100%" width="50%" alt="...">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Squirtle</h5>
+                                                <span class="badge bg-primary">Water</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="item4" class="carousel-item" data-name="Chikorita" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <div class="card poke-card">
+                                            <div class="image-wrapper">
+                                                <img src="https://www.professorlotus.com/Sprites/Chikorita.gif" height="100%" width="50%" alt="...">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Chikorita</h5>
+                                                <span class="badge bg-success">Grass</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="item5" class="carousel-item" data-name="Cyndaquil" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <div class="card poke-card">
+                                            <div class="image-wrapper">
+                                                <img src="https://www.professorlotus.com/Sprites/Cyndaquil.gif" height="100%" width="50%" alt="...">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Cyndaquil</h5>
+                                                <span class="badge bg-danger">Fire</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="item6" class="carousel-item" data-name="Totodile" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <div class="card poke-card">
+                                            <div class="image-wrapper">
+                                                <img src="https://www.professorlotus.com/Sprites/Totodile.gif" height="100%" width="50%" alt="...">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Totodile</h5>
+                                                <span class="badge bg-primary">Water</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="item7" class="carousel-item" data-name="Oddish" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <div class="card poke-card">
+                                            <div class="image-wrapper">
+                                                <img src="https://www.professorlotus.com/Sprites/Oddish.gif" height="100%" width="50%" alt="...">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Oddish</h5>
+                                                <span class="badge bg-success">Grass</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="item8" class="carousel-item" data-name="Torchic" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <div class="card poke-card">
+                                            <div class="image-wrapper">
+                                                <img src="https://www.professorlotus.com/Sprites/Torchic.gif" height="100%" width="50%" alt="...">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Torchic</h5>
+                                                <span class="badge bg-danger">Fire</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="item9" class="carousel-item" data-name="Mudkip" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <div class="card poke-card">
+                                            <div class="image-wrapper">
+                                                <img src="https://www.professorlotus.com/Sprites/Mudkip.gif" height="100%" width="50%" alt="...">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Mudkip</h5>
+                                                <span class="badge bg-primary">Water</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="item10" class="carousel-item" data-name="Geodude" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <div class="card poke-card">
+                                            <div class="image-wrapper">
+                                                <img src="https://www.professorlotus.com/Sprites/Geodude.gif" height="100%" width="50%" alt="...">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Geodude</h5>
+                                                <span class="badge bg-secondary">Rock</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="item11" class="carousel-item" data-name="Bellsprout" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <div class="card poke-card">
+                                            <div class="image-wrapper">
+                                                <img src="https://www.professorlotus.com/Sprites/Bellsprout.gif" height="100%" width="50%" alt="...">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Bellsprout</h5>
+                                                <span class="badge bg-success">Grass</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card p-4">
+                            <div class="card-body">
+
+                                <h2>Videos</h2>
+
+                                <div style="height: 500px; overflow-x: hidden;">
+
+                                    <div class="container">
+
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <iframe width="100%" src="https://www.youtube.com/embed/VU87z_rKeF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="col-9">
+                                                <h5 class="card-title">Buffed CINDERACE Pyroball and Unite Move are straight up BROKEN | Pokemon Unite</h5>
+
+                                                <p class="card-text">Thank you all for watching! Stay tuned and subscribe to my YouTube Channel to always be kept up to date about the newest Pokemon Unite Pokemon, Pokemon Unite Tier Lists, Pokemon Unite Balance Patches, Pokemon Unite Patches, Pokemon Unite Gameplay, Pokemon Unite Guides, Pokemon Unite Boost Emblem, Pokemon Unite Boost Emblems, and Pokemon Unite Highlights!</p>
+                                            </div>
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <iframe width="100%" src="https://www.youtube.com/embed/Z6dX4aIdsR4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="col-9">
+                                                <h5 class="card-title">Glaceon Might Be The MOST OP Thing In Pokemon Unite</h5>
+
+                                                <p class="card-text">Wow what a wild balance patch for Glaceon... this thing went from being pretty dang good to just being absolutely nuts. Check out two matches with the new buffed Glaceon build. Yeehaw  Become a channel member today!:</p>
+                                                <p class="card-text">Beginner tips and tricks, Beginner guide, Advanced guide, glaceon gameplay, glaceon build, glaceon cool down, glaceon  emblems</p>
+                                            </div>
+                                        </div>  
+
+                                        <hr>
+
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <iframe width="100%" src="https://www.youtube.com/embed/Cyoy7iGZxUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="col-9">
+                                                <h5 class="card-title">THESE SCIZOR BUFFS FEEL INSANE! (Pokemon Unite)</h5>
+
+                                                <p class="card-text">FTC Legal Disclaimer - Some links found in the description box of my videos may be affiliate links, meaning I will make commission on sales you make through my link. This is at no extra cost to you to use my links/codes, it's just one more way to support me and my channel! :)</p>
+                                            </div>
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <iframe width="100%" src="https://www.youtube.com/embed/lJUC5M7XkD8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                            </div>
+                                            <div class="col-9">
+                                                <h5 class="card-title">One Arrow = One KO Fully Stacked Decidueye feels ILLEGAL to play | Pokemon Unite</h5>
+
+                                                <p class="card-text">Thank you all for watching! Stay tuned and subscribe to my YouTube Channel to always be kept up to date about the newest Pokemon Unite Pokemon, Pokemon Unite Tier Lists, Pokemon Unite Balance Patches, Pokemon Unite Patches, Pokemon Unite Gameplay, Pokemon Unite Guides, Pokemon Unite Boost Emblem, Pokemon Unite Boost Emblems, and Pokemon Unite Highlights!</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-center text-white" style="width: 100%; background-color: #141414;">
+
+        <div class="container p-4">
+            <section class="mb-4">
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-facebook"></i>
+                </a>
+        
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
+        
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
+        
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+        
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                ><i class="fab fa-linkedin-in"></i
+                ></a>
+        
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                ><i class="fab fa-github"></i
+                ></a>
+            </section>
+    
+            <section class="">
+                <form action="">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-auto">
+                        <p class="pt-2">
+                            <strong>Sign up for our newsletter</strong>
+                        </p>
+                        </div>
+            
+                        <div class="col-md-5 col-12">
+                        <div class="form-outline form-white mb-4">
+                            <input type="email" id="form5Example21" class="form-control" />
+                            <label class="form-label" for="form5Example21">Email address</label>
+                        </div>
+                        </div>
+            
+                        <div class="col-auto">
+                        <button type="submit" class="btn btn-outline-light mb-4">
+                            Subscribe
+                        </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        
+            <section class="mb-4">
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+                repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+                eum harum corrupti dicta, aliquam sequi voluptate quas.
+                </p>
+            </section>
+        
+            <section class="">
+
+                <div class="row">
+
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+            
+                        <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="#!" class="text-white">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Link 4</a>
+                        </li>
+                        </ul>
+                    </div>
+            
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+            
+                        <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="#!" class="text-white">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Link 4</a>
+                        </li>
+                        </ul>
+                    </div>
+            
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+            
+                        <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="#!" class="text-white">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Link 4</a>
+                        </li>
+                        </ul>
+                    </div>
+            
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+            
+                        <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="#!" class="text-white">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Link 4</a>
+                        </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+    
+        <div class="text-center p-3" style="background-color: #BD4242;">
+            © 2020 Copyright:
+            <a class="text-white" href="http://balbuena.unaux.com/">balbuenaSandyLuis.com</a>
+        </div>
+
+    </footer>
+
+
+    <!-- Modal -->
+    <div class="modal modal-lg fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-keyboard="false"  data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            
+                                <div class="container">
+                                    <div class="mytabs">
+
+                                        <input type="radio" id="description" name="mytabs" checked="checked">
+                                        <label for="description">Description</label>
+                                        <div class="tab">
+                                            <div class="row">
+
+                                                <div class="col-4">
+                                                    <img class="modal-pokemon" src="" height="200vh" width="100%">
+                                                </div>
+    
+                                                <div class="col-8">
+                                                    <p id="pokemonDescription"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <input type="radio" id="attributes" name="mytabs">
+                                        <label for="attributes">Attributes</label>
+                                        <div class="tab">
+                                            <div id="pokemonStats">
+
+                                            </div>
+                                        </div>
+
+                                        <input type="radio" id="moves" name="mytabs">
+                                        <label for="moves">Moves</label>
+                                        <div class="tab">
+                                            <table class="table" id="myTable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Description</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <input type="radio" id="evolution" name="mytabs">
+                                        <label for="evolution">Evolution</label>
+                                        <div class="tab">
+                                            <div style="display: flex; gap: 20px; justify-content: space-between; height: 100%; align-items: center;" id="pokemonEvolutionImages">
+                                                
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clearTableData()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+    <script src="assets/js/index.js"></script>
+
+    <script>
+    </script>
+
+    
+
+</body>
+</html>
