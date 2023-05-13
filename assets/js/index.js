@@ -1,3 +1,10 @@
+var loader = document.getElementById("preloader");
+
+window.addEventListener("load", function(){
+    loader.style.display = "none";
+});
+
+
 const multipleItemCarousel = document.querySelector('#carouselExampleInterval');
 
 if(window.matchMedia("(min-width:576px)").matches){
@@ -40,6 +47,10 @@ const item7 = document.getElementById('item7');
 const item8 = document.getElementById('item8');
 const item9 = document.getElementById('item9');
 const item10 = document.getElementById('item10');
+const item11 = document.getElementById('item11');
+const item12 = document.getElementById('item12');
+const item13 = document.getElementById('item13');
+const item14 = document.getElementById('item14');
 const modal = document.querySelector('.modal');
 const modalTitle = modal.querySelector('.modal-title');
 const modalImage = modal.querySelector('.modal-pokemon');
@@ -159,6 +170,35 @@ item11.addEventListener('click', () => {
     modal.style.display = 'block';
 });
 
+item12.addEventListener('click', () => {
+    const name = item12.getAttribute('data-name');
+    pokemonApi(name);
+
+    modalTitle.textContent = name;
+    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+
+    modal.style.display = 'block';
+});
+
+item13.addEventListener('click', () => {
+    const name = item13.getAttribute('data-name');
+    pokemonApi(name);
+
+    modalTitle.textContent = name;
+    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+
+    modal.style.display = 'block';
+});
+
+item14.addEventListener('click', () => {
+    const name = item14.getAttribute('data-name');
+    pokemonApi(name);
+
+    modalTitle.textContent = name;
+    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+
+    modal.style.display = 'block';
+});
 
 
 function pokemonApi(name)
@@ -172,34 +212,45 @@ function pokemonApi(name)
     // Making a GET request using an axios instance from a connected library
     axios.get(`${RAPIDAPI_API_URL}`)
     .then(response => {
-        console.log(response.data.stats[0].base_stat);
+        // console.log(response.data.stats[0].base_stat);
 
 
-        const moves = response.data.moves;
+        // const moves = response.data.moves;
 
-        const table = document.getElementById("myTable");
-        const tbody = table.getElementsByTagName("tbody")[0];
+        // const table = document.getElementById("myTable");
+        // const tbody = table.getElementsByTagName("tbody")[0];
+
+        
         
         // Clear existing table rows
-        tbody.innerHTML = "";
+        // tbody.innerHTML = "";
         
         // Populate table rows with data
-        moves.forEach((item) => {
-            const row = document.createElement("tr");
+        // moves.forEach((item) => {
+        //     const row = document.createElement("tr");
 
-            const titleCell = document.createElement("td");
-            titleCell.textContent = item.move.name;
-            row.appendChild(titleCell);
+        //     const titleCell = document.createElement("td");
+        //     titleCell.textContent = item.move.name;
+        //     row.appendChild(titleCell);
 
             // moveDescription(item.move.url)
 
-            const quantityCell = document.createElement("td");
-            quantityCell.textContent = item.move.url;
-            row.appendChild(quantityCell);
-        
-            tbody.appendChild(row);
+            // axios.get(`${item.move.url}`)
+            // .then(response => {
+            //     console.log(response.data.flavor_text_entries[0].flavor_text);
 
-        });
+
+                // const quantityCell = document.createElement("td");
+                // quantityCell.textContent = item.move.url;
+                // row.appendChild(quantityCell);
+
+                // if(quantityCell != undefined || quantityCell == null)
+                // {   
+                    // tbody.appendChild(row);
+            //     }
+            // })
+
+        // });
 
         let HP = response.data.stats[0].base_stat;
         let ATTACK = response.data.stats[1].base_stat;
@@ -227,7 +278,9 @@ function moveDescription(moveUrl)
     // Making a GET request using an axios instance from a connected library
     axios.get(`${RAPIDAPI_API_URL}`)
     .then(response => {
-        console.log(response.data.flavor_text_entries[0]);
+        // console.log(response.data.flavor_text_entries[0].flavor_text);
+
+        return response.data.flavor_text_entries[0].flavor_text.replace(/[^a-zA-Z0-9 ]/g, " ");
     })
     .catch(error => console.error('moveDescription', error))
 }
@@ -242,9 +295,9 @@ function chainEvolution(url)
     // Making a GET request using an axios instance from a connected library
     axios.get(`${RAPIDAPI_API_URL}`)
     .then(response => {
-        console.log(response.data.chain.species.name);
-        console.log(response.data.chain.evolves_to[0].species.name);
-        console.log(response.data.chain.evolves_to[0].evolves_to[0].species.name);
+        // console.log(response.data.chain.species.name);
+        // console.log(response.data.chain.evolves_to[0].species.name);
+        // console.log(response.data.chain.evolves_to[0].evolves_to[0].species.name);
 
         let img1 = response.data.chain.species.name;
         let img2 = response.data.chain.evolves_to[0].species.name;
@@ -267,7 +320,7 @@ function pokemonFlavorText(name)
     // Making a GET request using an axios instance from a connected library
     axios.get(`${RAPIDAPI_API_URL}`)
     .then(response => {
-        console.log(response.data.flavor_text_entries[0]);
+        // console.log(response.data.flavor_text_entries[0]);
 
         // const cleanedString = myString.replace(/[^a-zA-Z0-9 ]/g, "");
 
@@ -297,5 +350,40 @@ function clearTableData()
     // $('#myTable').empty();
     // $('#myTable').DataTable();
 }
+
+function openTab(tabname) {
+    var i;
+    var x = document.getElementsByClassName("card-body tab");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    document.getElementById('tabdescription').classList.remove('active');
+    document.getElementById('tabattributes').classList.remove('active');
+    // document.getElementById('tabmoves').classList.remove('active');
+    document.getElementById('tabevolution').classList.remove('active');
+
+    let newActivTab = "tab"+tabname;
+
+    document.getElementById(tabname).style.display = "block";
+    document.getElementById(newActivTab).classList.add('active');
+
+}
+
+const backToTopButton = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
 
 
