@@ -18,9 +18,10 @@ function getpokemon()
         // options...
     });
 
-    // let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=50&offset=0';
+    let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=50&offset=0';
     // let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=251&offset=0';
-    let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0';
+    // let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0';
+    // let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=1&offset=0';
 
     // Making a GET request using an axios instance from a connected library
     axios.get(`${RAPIDAPI_API_URL}`)
@@ -37,13 +38,12 @@ function getpokemon()
             axios.get(`https://pokeapi.co/api/v2/pokemon/`+item.name)
             .then(response => {
                 // gallery.innerHTML += '<div class="galleryPokemonImg hvr-float hvr-shadow '+response.data.types[0].type.name+'" style="background-image: url(https://www.professorlotus.com/Sprites/'+item.name+'.gif);">';
-
                 // gallery.innerHTML += '<img class="galleryPokemonImg hvr-float hvr-shadow '+response.data.types[0].type.name+'" src="https://www.professorlotus.com/Sprites/'+item.name+'.gif">';
                 
                 var newElement = document.createElement('div');
                 newElement.classList.add('galleryPokemonImg');
                 newElement.classList.add(response.data.types[0].type.name);
-                newElement.innerHTML = '<img class="galleryPokemonImg '+response.data.types[0].type.name+'" src="https://www.professorlotus.com/Sprites/'+item.name+'.gif" onerror="this.src=`assets/images/missingImage.png`">';
+                newElement.innerHTML = '<img id="imageloader'+item.name+'" src="assets/images/imageload.gif" alt="Loading" class="loading"><img id="imagepokemon'+item.name+'" style="display:none;" class="galleryPokemonImg '+response.data.types[0].type.name+'" src="https://www.professorlotus.com/Sprites/'+item.name+'.gif" onerror="this.src=`assets/images/missingImage.png`"  onload="onImageLoad(`'+item.name+'`)">';
 
                 $grid.isotope( 'insert', newElement );
             })
@@ -112,3 +112,15 @@ $(document).ready(function(){
         $('.gallery').isotope({ filter: category });
     });
 });
+
+
+let imageLoaded = false;
+
+function onImageLoad(id) {
+    console.log(id);
+    imageLoaded = true;
+    const loadingImage = document.getElementById('imageloader'+id);
+    const mainImage = document.getElementById('imagepokemon'+id);
+    loadingImage.style.display = 'none';
+    mainImage.style.display = 'block';
+}
