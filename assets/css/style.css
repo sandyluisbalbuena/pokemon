@@ -16,7 +16,7 @@
 
 body {
     font-family: Poppins;
-    background-color: #EBEBEB;
+    background-color: aliceblue;
 }
 
 
@@ -274,9 +274,44 @@ swiper-container {
     margin-right: 10px;
     padding: 10px 20px;
     z-index: 5;
-  }
-  
-  #back-to-top.show {
+}
+
+#back-to-top.show {
     display: block;
-  }
-  
+}
+
+.galleryPokemonImg {
+    background-color: antiquewhite;
+    width: 19.5%;
+    height: 15em;
+    padding: 20px;
+}
+
+.galleryPokemonImg img{
+    width: 100%;
+    height: 100%;
+}
+
+/* .grass {
+    border: solid #408861 5px;
+}
+
+.fire {
+    border: solid #F66A03 5px;
+}
+
+.water {
+    border: solid #87E0FF 5px;
+} */
+
+/* .item {
+    background-color: antiquewhite;
+    border-radius: 20px;
+    width: 20%;
+    height: 35vh;
+} */
+
+.gallery {
+    margin-top: 10px;
+    width: 100%;
+}

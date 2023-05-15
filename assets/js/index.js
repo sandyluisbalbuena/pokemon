@@ -347,8 +347,6 @@ function tableInit()
 function clearTableData()
 {
     table.destroy();
-    // $('#myTable').empty();
-    // $('#myTable').DataTable();
 }
 
 function openTab(tabname) {

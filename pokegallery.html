@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="icon" href="https://pngimg.com/uploads/pokemon_logo/small/pokemon_logo_PNG12.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <div id="preloader"></div>
+
+    <header>
+
+        <nav class="navbar navbar-expand-sm">
+            <div class="container">
+              <a class="navbar-brand" href="#">
+                <img src="assets/images/pokemonBrandName.png" alt="" width="100px">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="pokegallery.html">PokeGallery</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pokecard.html">PokeCard</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+    </header>
+
+    <main>
+
+        <div class="paper1">
+            <div class="container" >
+
+                <div class="row mt-5"  style="justify-content: center;">
+
+
+                    <div class="btn-group mt-5" role="group" aria-label="Basic example">
+                        <button class="filter btn" style="background-color: antiquewhite;" data-category="*">All</button>
+                        <button class="filter btn" style="background-color: #408861;" data-category=".grass">Grass</button>
+                        <button class="filter btn" style="background-color: #F66A03;" data-category=".fire">Fire</button>
+                        <button class="filter btn" style="background-color: #87E0FF;" data-category=".water">Water</button>
+                    </div>
+
+
+                    <div id="gallery" class="gallery" style="justify-content: center;">
+
+                    </div>
+
+                    <!-- <button class="btn btn-primary mt-5" onclick="getpokemon()">Load More...</button> -->
+
+
+                    <!-- <div class="gallery" style="justify-content: center; position: relative; height: 0px;">
+                        <div class="galleryPokemonImg hvr-float hvr-shadow grass" style="background-image: url(https://www.professorlotus.com/Sprites/bulbasaur.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow grass" style="background-image: url(https://www.professorlotus.com/Sprites/ivysaur.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow grass" style="background-image: url(https://www.professorlotus.com/Sprites/venusaur.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow fire" style="background-image: url(https://www.professorlotus.com/Sprites/charmander.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/caterpie.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/pidgey.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/pidgeotto.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/metapod.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/pidgeot.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/weedle.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/kakuna.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/spearow.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow fire" style="background-image: url(https://www.professorlotus.com/Sprites/charmeleon.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/fearow.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/ekans.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/arbok.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow electric" style="background-image: url(https://www.professorlotus.com/Sprites/pikachu.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow electric" style="background-image: url(https://www.professorlotus.com/Sprites/raichu.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow ground" style="background-image: url(https://www.professorlotus.com/Sprites/sandshrew.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow ground" style="background-image: url(https://www.professorlotus.com/Sprites/sandslash.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/nidoran-f.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow water" style="background-image: url(https://www.professorlotus.com/Sprites/squirtle.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/nidorina.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/nidoqueen.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/nidoran-m.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/nidorino.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/nidoking.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow fire" style="background-image: url(https://www.professorlotus.com/Sprites/charizard.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow water" style="background-image: url(https://www.professorlotus.com/Sprites/wartortle.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/beedrill.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow water" style="background-image: url(https://www.professorlotus.com/Sprites/blastoise.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow fairy" style="background-image: url(https://www.professorlotus.com/Sprites/clefairy.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/butterfree.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow fairy" style="background-image: url(https://www.professorlotus.com/Sprites/clefable.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow fire" style="background-image: url(https://www.professorlotus.com/Sprites/vulpix.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow fire" style="background-image: url(https://www.professorlotus.com/Sprites/ninetales.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/jigglypuff.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/wigglytuff.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/zubat.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/golbat.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow grass" style="background-image: url(https://www.professorlotus.com/Sprites/oddish.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow grass" style="background-image: url(https://www.professorlotus.com/Sprites/gloom.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/rattata.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow grass" style="background-image: url(https://www.professorlotus.com/Sprites/vileplume.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/paras.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/parasect.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/venonat.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/venomoth.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/raticate.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow ground" style="background-image: url(https://www.professorlotus.com/Sprites/diglett.gif);"></div>
+                    </div> -->
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-center text-white" style="width: 100%; background-color: #595555;">
+        <div class="container p-4">
+
+            <section class="mb-4">
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-facebook"></i>
+                </a>
+        
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
+        
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
+        
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+        
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                ><i class="fab fa-linkedin-in"></i
+                ></a>
+        
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                ><i class="fab fa-github"></i
+                ></a>
+            </section>
+
+            <section>
+                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                        <label for="name">Your Name</label>
+                        <input type="text" name="name" class="form-control" id="name" required="">
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="name">Your Email</label>
+                        <input type="email" class="form-control" name="email" id="email" required="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Subject</label>
+                        <input type="text" class="form-control" name="subject" id="subject" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Message</label>
+                        <textarea class="form-control" name="message" rows="10" required=""></textarea>
+                    </div>
+                    <div class="text-center my-3">
+                        <button type="submit" class="btn btn-secondary">Send Message</button>
+                    </div>
+                </form>
+            </section>
+        
+        </div>
+    
+        <div class="text-center p-3" style="background-color: #BD4242;">
+            © 2020 Copyright:
+            <a class="text-white" href="https://sandy-luis-balbuena.epizy.com/">sandy-luis-balbuena.epizy.com</a>
+        </div>
+
+    </footer>
+
+    <button class="btn" id="back-to-top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js" integrity="sha512-E/yP5UiPXb6VelX+dFLuUD+1IZw/Kz7tMncFTYbtoNSCdRZPFoGN3jZ2p27VUxHEkhbPiLuZhZpVEXxk9wAHCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="assets/js/pokegallery.js"></script>
+
+    <script>
+    </script>
+
+</body>
+</html>
