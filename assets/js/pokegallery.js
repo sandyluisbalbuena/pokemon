@@ -18,8 +18,8 @@ function getpokemon()
         // options...
     });
 
-    let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=50&offset=0';
-    // let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=251&offset=0';
+    // let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=50&offset=0';
+    let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=251&offset=0';
     // let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0';
     // let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=1&offset=0';
 

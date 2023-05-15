@@ -30,27 +30,27 @@
 
         <nav class="navbar navbar-expand-sm">
             <div class="container">
-              <a class="navbar-brand" href="#">
-                <img src="assets/images/pokemonBrandName.png" alt="" width="100px">
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="pokegallery.html">PokeGallery</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="pokecard.html">PokeCard</a>
-                  </li>
-                </ul>
-              </div>
+                <a class="navbar-brand" href="#">
+                    <img src="assets/images/pokemonBrandName.png" alt="" width="100px">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="pokegallery.html">PokeGallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" disabled><i class="fa-solid fa-cards"></i>PokeCard</a>
+                    </li>
+                    </ul>
+                </div>
             </div>
-          </nav>
+        </nav>
 
     </header>
 
@@ -68,8 +68,7 @@
             </video>
         </div>
 
-        <div style="height: 100vh; background-image: url(assets/images/pokemonBrandName2.png); background-size: 45%; background-repeat: no-repeat; background-position: center;"></div>
-
+        <div style="height: 100vh; background-image: url(assets/images/pokemoncard.png); background-size: 45%; background-repeat: no-repeat; background-position: center;"></div>
 
         <div class="paper1">
             <div class="container" >
@@ -80,7 +79,7 @@
                             <div class="card-body">
                                 <!-- <form> -->
                                     <div class="mb-3">
-                                        <label for="pokemonName" class="form-label">Pokemon Name</label>
+                                        <label for="pokemonName" class="form-label">Pokemon Card Name...</label>
                                         <input type="text" class="form-control" id="pokemonName">
                                         <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                                     </div>
@@ -94,7 +93,7 @@
                     <div class="col-9">
                         <div id="cardGallery" class="cardGallery" style="justify-content: center;">
 
-                            <table class="table" id="myTable"  tyle="height: 400px; overflow: auto;">
+                            <table class="table table-hover" id="myTable"  tyle="height: 400px; overflow: auto;">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
@@ -105,7 +104,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+                                    <tr>
+                                        <th colspan="5  " class="text-center text-info">Search a Card...</th>
+                                    </tr>
                                 </tbody>
                             </table>
 
@@ -177,7 +178,7 @@
     
         <div class="text-center p-3" style="background-color: #BD4242;">
             © 2020 Copyright:
-            <a class="text-white" href="https://sandy-luis-balbuena.epizy.com//">https://sandy-luis-balbuena.epizy.com/</a>
+            <a class="text-white" href="https://sandy-luis-balbuena.epizy.com//">sandy-luis-balbuena.epizy.com</a>
         </div>
 
     </footer>

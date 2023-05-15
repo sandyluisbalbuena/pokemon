@@ -42,35 +42,66 @@ function pokemonCardApi()
 
         tbody.innerHTML = "";
 
+        if(cardData != 0 || cardData == null){
 
-        cardData.forEach((item) => {
-            const row = document.createElement("tr");
+            cardData.forEach((item) => {
+                const row = document.createElement("tr");
 
-            const idCell = document.createElement("td");
-            idCell.textContent = item.id;
-            row.appendChild(idCell);
+                const idCell = document.createElement("td");
+                idCell.textContent = item.id;
+                row.appendChild(idCell);
 
-            const imageCell = document.createElement("td");
-            imageCell.innerHTML = '<img src="'+item.imageUrl+'" width="75px">';
-            row.appendChild(imageCell);
+                const imageCell = document.createElement("td");
+                imageCell.innerHTML = item.imageUrl;
+                row.appendChild(imageCell);
 
-            const nameCell = document.createElement("td");
-            nameCell.innerHTML = '<h4>'+item.name+'</h4>';
-            row.appendChild(nameCell);
+                const nameCell = document.createElement("td");
+                nameCell.innerHTML = '<h4>'+item.name+'</h4>';
+                row.appendChild(nameCell);
 
-            const hpCell = document.createElement("td");
-            hpCell.textContent = item.hp;
-            row.appendChild(hpCell);
+                const hpCell = document.createElement("td");
+                hpCell.textContent = item.hp;
+                row.appendChild(hpCell);
 
-            const efromCell = document.createElement("td");
-            efromCell.textContent = item.evolvesFrom;
-            row.appendChild(efromCell);
+                const efromCell = document.createElement("td");
+                efromCell.textContent = item.evolvesFrom;
+                row.appendChild(efromCell);
+                
+                tbody.appendChild(row);
+            });
+
+            // console.log(data);
+
             
-            tbody.appendChild(row);
-        });
+              
+              // Initialize the DataTables table
+            $(document).ready(function() {
+
+
+
+                $('#myTable').DataTable({
+
+                    columnDefs: [
+                        { targets: 1, render: function(data, type, row) 
+                            {
+                                return '<img src="' + data + '" alt="' + row[2] + '" height="100">';
+                            } 
+                        }
+                    ],
+                    searching:false,
+                    scrollY: '300px', // Set the desired height
+                    scrollCollapse: true,
+                });
+            });
+
+        }
+        else
+        {
+            tbody.innerHTML = '<tr><th colspan="5" class="text-center text-danger">No result...</th></tr>';
+        }
 
     })
-    .catch(error => console.error('On get student error', error))
+    .catch(error => tbody.innerHTML = '<tr><th colspan="5" class="text-center text-danger">Something went wrong..</th></tr>')
 
 }
 
