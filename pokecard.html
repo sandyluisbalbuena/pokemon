@@ -21,6 +21,25 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.css" integrity="sha512-iQ3H4A+iyBTP8M4ypX5PrTt2S+G1zmRjf0k0uOASKlFHysV8TL9ZoQyVwPss0D12IBTMoDEHA8+bg8a1viS9Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <style>
+        .modal-content {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .modal-dialog {
+            max-width: 500px; /* Adjust the width as needed */
+        }
+
+        .modal-backdrop {
+            opacity: 0 !important;
+            background-color: transparent !important;
+        }
+    </style> -->
+
+
 </head>
 <body>
 
@@ -28,7 +47,7 @@
 
     <header>
 
-        <nav class="navbar navbar-expand-sm">
+        <nav class="navbar navbar-expand-sm text-center">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="assets/images/pokemonBrandName.png" alt="" width="100px">
@@ -72,25 +91,26 @@
 
         <div class="paper1">
             <div class="container" >
-                <div class="row mt-5"  style="justify-content: center;">
+                <div class="row mt-5">
 
-                    <div class="col-3">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
                         <div class="card">
                             <div class="card-body">
                                 <!-- <form> -->
                                     <div class="mb-3">
                                         <label for="pokemonName" class="form-label">Pokemon Card Name...</label>
-                                        <input type="text" class="form-control" id="pokemonName">
+                                        <input type="text" class="form-control" id="pokemonName" onkeypress="handleKeyPress(event)">
                                         <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                                     </div>
-                                    
 
-                                    <button class="btn btn-primary" onclick="pokemonCardApi();">Search</button>
+                                    <button class="btn btn-primary" style="width: 100%;" onclick="pokemonCardApi();">Search</button>
                                 <!-- </form> -->
                             </div>
                         </div>
                     </div>
-                    <div class="col-9">
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
                         <div id="cardGallery" class="cardGallery" style="justify-content: center;">
 
                             <table class="table table-hover" id="myTable"  tyle="height: 400px; overflow: auto;">
@@ -105,14 +125,37 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th colspan="5  " class="text-center text-info">Search a Card...</th>
+                                        <th>Search a card...</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
 
                         </div>
                     </div>
-             
+              
+                    <!-- Modal -->
+                    <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-bs-backdrop="static" data-bs-keyboard="false" >
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="destroythreeDfunction()"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="canvas-container" class="container"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-success" onclick="rotateCard()">Rotate</button>
+                                <button class="btn btn-secondary" data-bs-dismiss="modal" onclick="destroythreeDfunction()">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -194,13 +237,14 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js" integrity="sha512-E/yP5UiPXb6VelX+dFLuUD+1IZw/Kz7tMncFTYbtoNSCdRZPFoGN3jZ2p27VUxHEkhbPiLuZhZpVEXxk9wAHCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js" integrity="sha512-S/H9RQ6govCzeA7F9D0m8NGfsGf0/HjJEiLEfWGaMCjFzavo+DkRbYtZLSO+X6cZsIKQ6JvV/7Y9YMaYnSGnAA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="assets/js/3dscript.js"></script>
     
     <script src="assets/js/pokecard.js"></script>
 
-    <script>
-    </script>
 
 </body>
 </html>

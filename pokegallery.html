@@ -16,11 +16,31 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/VenoBox-master/dist/venobox.css"> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.4/venobox.css" integrity="sha512-FklhNXzHcdzrbf6AqtmZo3hOse+bIr/ofmEpzZmNWftOTsj8qWasNgJN6Y8d71grmcZZZa1bbHbXFbTTPCa3pA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        .vbox-overlay {
+            opacity: 1; --sk-color: #00B1F0; --vbox-title-width: 100%; --vbox-title-radius: 0; --vbox-share-width: auto; --vbox-share-radius: 5em; --vbox-tools-color: #d2d2d2; --vbox-title-background: #1C1C1C; --vbox-share-background: #1C1C1C; --vbox-padding: 0;
+        }
+
+        .vbox-child {
+          background-color: transparent !important;
+          border:none;
+          box-shadow: none;
+        }
+    </style>
+
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/venobox/dist/venobox.min.css" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.4/venobox.css" integrity="sha512-FklhNXzHcdzrbf6AqtmZo3hOse+bIr/ofmEpzZmNWftOTsj8qWasNgJN6Y8d71grmcZZZa1bbHbXFbTTPCa3pA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.4/venobox.min.css" integrity="sha512-HFaR9dTfvVVIkca85XvaYOlbZqtyRp5f7cyfb3ycnQU60RM1qjmJKq7qZPLDI+nudOkFDuY5giiwQqfbP7M36g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 </head>
 <body>
 
@@ -28,7 +48,7 @@
 
     <header>
 
-        <nav class="navbar navbar-expand-sm">
+        <nav class="navbar navbar-expand-sm text-center">
             <div class="container">
               <a class="navbar-brand" href="#">
                 <img src="assets/images/pokemonBrandName.png" alt="" width="100px">
@@ -61,6 +81,7 @@
 
                 <div class="row mt-5"  style="justify-content: center;">
 
+                    <button class="btn btn-primary mt-5"  onclick="venoboxinit()">Go</button>
 
                     <div class="btn-group mt-5" role="group" aria-label="Basic example">
                         <button class="filter btn" style="background-color: antiquewhite;" data-category="*">All</button>
@@ -74,11 +95,10 @@
 
                     </div>
 
-                    <!-- <button class="btn btn-primary mt-5" onclick="getpokemon()">Load More...</button> -->
-
-
-                    <!-- <div class="gallery" style="justify-content: center; position: relative; height: 0px;">
-                        <div class="galleryPokemonImg hvr-float hvr-shadow grass" style="background-image: url(https://www.professorlotus.com/Sprites/bulbasaur.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow grass" style="background-image: url(https://www.professorlotus.com/Sprites/ivysaur.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow grass" style="background-image: url(https://www.professorlotus.com/Sprites/venusaur.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow fire" style="background-image: url(https://www.professorlotus.com/Sprites/charmander.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/caterpie.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/pidgey.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/pidgeotto.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/metapod.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/pidgeot.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/weedle.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/kakuna.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/spearow.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow fire" style="background-image: url(https://www.professorlotus.com/Sprites/charmeleon.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/fearow.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/ekans.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/arbok.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow electric" style="background-image: url(https://www.professorlotus.com/Sprites/pikachu.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow electric" style="background-image: url(https://www.professorlotus.com/Sprites/raichu.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow ground" style="background-image: url(https://www.professorlotus.com/Sprites/sandshrew.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow ground" style="background-image: url(https://www.professorlotus.com/Sprites/sandslash.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/nidoran-f.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow water" style="background-image: url(https://www.professorlotus.com/Sprites/squirtle.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/nidorina.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/nidoqueen.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/nidoran-m.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/nidorino.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/nidoking.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow fire" style="background-image: url(https://www.professorlotus.com/Sprites/charizard.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow water" style="background-image: url(https://www.professorlotus.com/Sprites/wartortle.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/beedrill.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow water" style="background-image: url(https://www.professorlotus.com/Sprites/blastoise.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow fairy" style="background-image: url(https://www.professorlotus.com/Sprites/clefairy.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/butterfree.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow fairy" style="background-image: url(https://www.professorlotus.com/Sprites/clefable.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow fire" style="background-image: url(https://www.professorlotus.com/Sprites/vulpix.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow fire" style="background-image: url(https://www.professorlotus.com/Sprites/ninetales.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/jigglypuff.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/wigglytuff.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/zubat.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow poison" style="background-image: url(https://www.professorlotus.com/Sprites/golbat.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow grass" style="background-image: url(https://www.professorlotus.com/Sprites/oddish.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow grass" style="background-image: url(https://www.professorlotus.com/Sprites/gloom.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/rattata.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow grass" style="background-image: url(https://www.professorlotus.com/Sprites/vileplume.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/paras.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/parasect.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/venonat.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow bug" style="background-image: url(https://www.professorlotus.com/Sprites/venomoth.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow normal" style="background-image: url(https://www.professorlotus.com/Sprites/raticate.gif);"></div><div class="galleryPokemonImg hvr-float hvr-shadow ground" style="background-image: url(https://www.professorlotus.com/Sprites/diglett.gif);"></div>
+                    <!-- <div id="gallery" class="gallery" style="justify-content: center; position: relative; height: 720px;">
+                        <div href="https://www.professorlotus.com/Sprites/ivysaur.gif" data-gall="myGallery" class="venobox galleryPokemonImg grass" style="position: absolute; left: 12px; top: 0px;">
+                            <img id="imagepokemonivysaur" style="display:block;" class="galleryPokemonImg grass" src="https://www.professorlotus.com/Sprites/ivysaur.gif">
+                        </div>
                     </div> -->
 
                 </div>
@@ -163,14 +183,17 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js" integrity="sha512-E/yP5UiPXb6VelX+dFLuUD+1IZw/Kz7tMncFTYbtoNSCdRZPFoGN3jZ2p27VUxHEkhbPiLuZhZpVEXxk9wAHCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
-    <script src="assets/js/pokegallery.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.4/venobox.js" integrity="sha512-xyA4Dk4Q2kaiq7yS+DjOhmBq0Pp//WTqu1kgKqa87O/g8DnCCAqImGS6Pt9OnwQtg6V4B02ZsaMpNf/dFcAriA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.4/venobox.min.js" integrity="sha512-KX9LF4BMXOG6qr9aGjFIPK1xysZAHWXpuZW6gnRi6oM+41qa8x4zaLPkckNxz5veoSWzmV5HZqPMMtknU+431g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/venobox/dist/venobox.min.js"></script>
 
-    <script>
-    </script>
+    <!-- <script src="assets/VenoBox-master/dist/venobox.js"></script> -->
+
+    
+    <script src="assets/js/pokegallery.js"></script>
 
 </body>
 </html>

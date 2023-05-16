@@ -261,7 +261,7 @@ function pokemonApi(name)
 
         pokemonFlavorText(name.toLowerCase());
         pokemonStats.innerHTML = '<h6>HP</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+HP+'%" aria-valuenow="'+HP+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>ATTACK</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+ATTACK+'%" aria-valuenow="'+ATTACK+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>DEFENSE</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+DEFENSE+'%" aria-valuenow="'+DEFENSE+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>SPECIAL ATTACK</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+SPECIAL_ATTACK+'%" aria-valuenow="'+SPECIAL_ATTACK+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>SPECIAL DEFENSE</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+SPECIAL_DEFENSE+'%" aria-valuenow="'+SPECIAL_DEFENSE+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>SPEED</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+SPEED+'%" aria-valuenow="'+SPEED+'%" aria-valuemin="0" aria-valuemax="100"></div></div>';
-        tableInit();
+        // tableInit();
     })
     .catch(error => console.error('On get student error', error))
 
@@ -324,7 +324,9 @@ function pokemonFlavorText(name)
 
         // const cleanedString = myString.replace(/[^a-zA-Z0-9 ]/g, "");
 
-        pokemonDescription.textContent = response.data.flavor_text_entries[0].flavor_text.replace(/[^a-zA-Z0-9 ]/g, " ");
+        modalDescription(response.data.flavor_text_entries[0].flavor_text.replace(/[^a-zA-Z0-9 ]/g, " "));
+
+        // pokemonDescription.textContent = response.data.flavor_text_entries[0].flavor_text.replace(/[^a-zA-Z0-9 ]/g, " ");
 
         chainEvolution(response.data.evolution_chain.url);
     })
@@ -346,12 +348,23 @@ function tableInit()
 
 function clearTableData()
 {
+    let i;
+    let x = document.getElementsByClassName("card-body tab");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    document.getElementById('tabattributes').classList.remove('active');
+    document.getElementById('tabevolution').classList.remove('active');
+    document.getElementById('tabdescription').classList.add('active');
+    document.getElementById('description').style.display = "block";
+
+
     table.destroy();
 }
 
 function openTab(tabname) {
-    var i;
-    var x = document.getElementsByClassName("card-body tab");
+    let i;
+    let x = document.getElementsByClassName("card-body tab");
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
     }
@@ -383,5 +396,18 @@ const backToTopButton = document.getElementById('back-to-top');
         behavior: 'smooth'
     });
 });
+
+function modalDescription(descriptionString)
+{
+    const elementType = document.getElementById('pokemonDescription');
+
+    new Typed(elementType, {
+        strings: [descriptionString+'.'],
+        typeSpeed: 10,
+        showCursor: false,
+    });
+}
+
+
 
 

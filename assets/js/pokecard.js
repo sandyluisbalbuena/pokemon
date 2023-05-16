@@ -4,16 +4,24 @@ window.addEventListener("load", function(){
     loader.style.display = "none";
 });
 
+function handleKeyPress(event) {
+    if (event.keyCode === 13) {
+        // Call your function here
+        pokemonCardApi();
+    }
+}
+
 
 function pokemonCardApi()
 {
+    $('#myTable').DataTable().destroy();
+
     const name = document.getElementById('pokemonName');
 
     const table = document.getElementById("myTable");
     const tbody = table.getElementsByTagName("tbody")[0];
         
     tbody.innerHTML = "";
-        
 
     // Constant URL value for JAAS API
     let RAPIDAPI_API_URL = 'https://api.pokemontcg.io/v1/cards?name='+name.value.toLowerCase().trim();
@@ -33,7 +41,6 @@ function pokemonCardApi()
     });
 
 
-
     axios.get(`${RAPIDAPI_API_URL}`)
     .then(response => {
         console.log(response.data.cards);
@@ -46,8 +53,11 @@ function pokemonCardApi()
 
             cardData.forEach((item) => {
                 const row = document.createElement("tr");
+                row.setAttribute("data-bs-toggle", "modal");
+                row.setAttribute("data-bs-target", "#exampleModal");
+                row.setAttribute("onclick", "threeDfunction('"+item.imageUrlHiRes+"')");
 
-                const idCell = document.createElement("td");
+                const idCell = document.createElement("th");
                 idCell.textContent = item.id;
                 row.appendChild(idCell);
 
@@ -69,35 +79,40 @@ function pokemonCardApi()
                 
                 tbody.appendChild(row);
             });
-
-            // console.log(data);
-
             
               
-              // Initialize the DataTables table
             $(document).ready(function() {
 
+                // const columns = [
+                //     { title: '#', data: 'id' },
+                //     { title: 'Image', data: 'image', render: function(data, row) {
+                //             return `<img src="${data}" alt="${row.name}" height="100">`;
+                //         }
+                //     },
+                //     { title: 'Name', data: 'name' },
+                //     { title: 'Hp', data: 'hp' },
+                //     { title: 'Evolves from', data: 'evfrom' }
+                // ];
 
 
                 $('#myTable').DataTable({
-
                     columnDefs: [
-                        { targets: 1, render: function(data, type, row) 
-                            {
-                                return '<img src="' + data + '" alt="' + row[2] + '" height="100">';
+                        { targets: 1, render: function(data, type, row) {
+                                return '<img src="' + data + '" alt="' + row[2] + '" height="50">';
                             } 
                         }
                     ],
                     searching:false,
-                    scrollY: '300px', // Set the desired height
+                    scrollY: '500px', // Set the desired height
                     scrollCollapse: true,
                 });
+
             });
 
         }
         else
         {
-            tbody.innerHTML = '<tr><th colspan="5" class="text-center text-danger">No result...</th></tr>';
+            tbody.innerHTML = '<tr><th class="text-center text-danger">No result...</th><td></td><td></td><td></td><td></td></tr>';
         }
 
     })
@@ -123,4 +138,9 @@ const backToTopButton = document.getElementById('back-to-top');
     });
 });
 
+
+$('#myTable').DataTable({
+    searching:false,
+    paging:false
+});
 
