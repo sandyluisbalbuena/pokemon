@@ -17,6 +17,8 @@ function getpokemon()
     var $grid = $('.gallery');
 
     $grid.isotope({
+        isResizeBound: false,
+        layoutMode: 'fitRows',
     });
 
     let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=50&offset=0';

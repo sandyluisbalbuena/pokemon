@@ -154,20 +154,35 @@ video {
     transform: scaleX(-1);
 }
 
-@media screen and (min-width:576px) {
+@media screen and (min-width:768px) {
     .carousel-inner{
         display: flex;
     }
     .carousel-item {
         display: block;
         margin-right:0;
-        flex: 0 0 calc(100%/3);
+        flex: 0 0 calc(100%/4);
     }
 
     .image-wrapper {
         height: 23vh;
     }
+    
+}
 
+@media screen and (min-width:1200px) {
+    .carousel-inner{
+        display: flex;
+    }
+    .carousel-item {
+        display: block;
+        margin-right:0;
+        flex: 0 0 calc(100%/5);
+    }
+
+    .image-wrapper {
+        height: 23vh;
+    }
     
 }
 
@@ -282,17 +297,32 @@ swiper-container {
 #back-to-top.show {
     display: block;
 }
+/* 
+@media screen and (min-width: 768px) {
+    .galleryPokemonImg {
+        width: 40%;
+        height: 17em;
+        padding: 20px;
+    }
+} */
 
-.galleryPokemonImg {
-    background-color: antiquewhite;
-    width: 19.5%;
-    height: 15em;
-    padding: 20px;
-}
+/* @media screen and (min-width: 992px) { */
+    .galleryPokemonImg {
+        width: 19.6373%;
+        height: 15em;
+        padding: 20px;
+    }
+/* } */
+
+
+
+/* .galleryPokemonImg {
+    
+} */
 
 .galleryPokemonImg img{
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
 }
 
 /* .grass {
@@ -318,8 +348,6 @@ swiper-container {
     margin-top: 10px;
     width: 100%;
 }
-
-
 
 .navbar .navbar-nav .nav-item .nav-link:hover {
     background-color: #FFDD03;
@@ -387,3 +415,18 @@ swiper-container {
       background: #F1C40F;
     }
   }
+
+
+#mytabs li a{
+    cursor: pointer;
+    color: #000;
+}
+
+/* 
+.pokemonModal {
+    background-color: transparent;
+    color: #fff;
+    border:none;
+    font-weight: bolder;
+    font-size: 1em;
+} */

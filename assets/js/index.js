@@ -7,7 +7,7 @@ window.addEventListener("load", function(){
 
 const multipleItemCarousel = document.querySelector('#carouselExampleInterval');
 
-if(window.matchMedia("(min-width:576px)").matches){
+if(window.matchMedia("(min-width:768px)").matches){
     const carousel = new bootstrap.Carousel(multipleItemCarousel, {
         interval: false
     })
@@ -263,15 +263,15 @@ function pokemonApi(name)
         const dataRadarChart = {
             labels: [
                 'HP',
-                'ATTACK',
-                'DEFENSE',
                 'SPECIAL ATTACK',
-                'SPECIAL DEFENSE',
+                'ATTACK',
                 'SPEED',
+                'DEFENSE',
+                'SPECIAL DEFENSE',
             ],
             datasets: [{
                 label: 'ATTRIBUTES',
-                data: [HP, ATTACK, DEFENSE, SPECIAL_ATTACK, SPECIAL_DEFENSE, SPEED],
+                data: [HP, SPECIAL_ATTACK, ATTACK, SPEED, DEFENSE, SPECIAL_DEFENSE],
                 fill: true,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgb(255, 99, 132)',
@@ -292,16 +292,21 @@ function pokemonApi(name)
         }
 
 
-
         var options = {
             scale: {
-                pointLabels: [],
+                pointLabels: {
+                    display:false
+                },
                 angleLines: {
-                    display: true
+                    display: false
+                },
+                gridLines: {
+                    display: false
                 },
                 ticks: {
-                    suggestedMin: 0,
-                    suggestedMax: 100
+                    display:false,
+                    // suggestedMin: 0,
+                    // suggestedMax: 100
                 }
             },
             elements: {
@@ -426,7 +431,7 @@ function clearTableData()
     document.getElementById('description').style.display = "block";
 
 
-    table.destroy();
+    // table.destroy();
 }
 
 function openTab(tabname) {
