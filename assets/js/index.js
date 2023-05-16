@@ -294,6 +294,8 @@ function pokemonApi(name)
 
         var options = {
             scale: {
+                min:0,
+                max:100,
                 pointLabels: {
                     display:false
                 },
@@ -304,9 +306,11 @@ function pokemonApi(name)
                     display: false
                 },
                 ticks: {
-                    display:false,
-                    // suggestedMin: 0,
-                    // suggestedMax: 100
+                    beginAtZero: true,
+                    min: 0,
+                    max: 100,
+                    stepSize: 20,
+                    display:false
                 }
             },
             elements: {
