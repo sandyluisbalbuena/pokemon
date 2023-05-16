@@ -539,12 +539,40 @@
     <div class="modal modal-lg fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-keyboard="false"  data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog modal-dialog-scrollable">
             <div class="modal-content pokemonModal">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                <div class="container"  style="text-align: right;">
+                    <div class="row">
+                        <div class="col-1 offset-11">
+                            <button type="button" class="btn-close mx-3" data-bs-dismiss="modal" aria-label="Close"  onclick="clearTableData()"></button>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
+                
+                <div class="modal-header" style="border: none;">
+
+
+
+                    <div class="d-none d-lg-block" style="width: 100%;">
+                        <ul class="nav nav-tabs mynav" id="mytabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="tabdescription" onclick="openTab('description')">Information</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " id="tabattributes" onclick="openTab('attributes')">Attributes</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link " id="tabmoves" onclick="openTab('moves')">Moves</a>
+                            </li> -->
+                            <li class="nav-item">
+                                <a class="nav-link " id="tabevolution" onclick="openTab('evolution')">Evolution</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="modal-body" style="border: none;">
                     <div class="container">
+                        <h1 class="modal-title fs-5 text-center" id="exampleModalLabel"></h1>
+
                         <div class="row"> 
                             
 
@@ -628,22 +656,7 @@
 
                                     
 
-                                    <div class="d-none d-lg-block">
-                                        <ul class="nav nav-tabs mynav" id="mytabs">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="tabdescription" onclick="openTab('description')">Description</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link " id="tabattributes" onclick="openTab('attributes')">Attributes</a>
-                                            </li>
-                                            <!-- <li class="nav-item">
-                                                <a class="nav-link " id="tabmoves" onclick="openTab('moves')">Moves</a>
-                                            </li> -->
-                                            <li class="nav-item">
-                                                <a class="nav-link " id="tabevolution" onclick="openTab('evolution')">Evolution</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    
 
                                     <div id="description" class="card-body tab">
                                         <div style="width: 100%;">
@@ -712,8 +725,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clearTableData()">Close</button>
+                <div class="modal-footer" style="border: none;">
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clearTableData()">Close</button> -->
                 </div>
             </div>
         </div>
@@ -731,7 +744,9 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js" integrity="sha512-tQQXRDB2wEmuJGtFrmmoFYzNTq8StA1XJrfO0OQbbTxd9G0CwaTDL6/C1y805IlvBVrMwOqob1kf6r/2U5XXVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
 
     <script src="assets/js/index.js"></script>
 

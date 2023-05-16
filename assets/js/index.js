@@ -275,7 +275,7 @@ function pokemonApi(name)
                 fill: true,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgb(255, 99, 132)',
-                pointBackgroundColor: 'rgb(255, 99, 132)',
+                // pointBackgroundColor: 'rgb(255, 99, 132)',
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: 'rgb(255, 99, 132)'
@@ -296,26 +296,21 @@ function pokemonApi(name)
             scale: {
                 min:0,
                 max:100,
-                pointLabels: {
-                    display:false
-                },
-                angleLines: {
-                    display: false
-                },
-                gridLines: {
-                    display: false
-                },
+                // r:{
+                //     angleLines:{
+                //         color:black
+                //     }
+                // },
                 ticks: {
                     beginAtZero: true,
                     min: 0,
                     max: 100,
                     stepSize: 20,
-                    display:false
                 }
             },
             elements: {
                 line: {
-                    borderWidth: 1
+                    borderWidth: 0
                 }
             },
             animation: {
