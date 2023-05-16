@@ -259,9 +259,76 @@ function pokemonApi(name)
         let SPECIAL_DEFENSE = response.data.stats[4].base_stat;
         let SPEED = response.data.stats[5].base_stat;
 
+
+        const dataRadarChart = {
+            labels: [
+                'HP',
+                'ATTACK',
+                'DEFENSE',
+                'SPECIAL ATTACK',
+                'SPECIAL DEFENSE',
+                'SPEED',
+            ],
+            datasets: [{
+                label: 'ATTRIBUTES',
+                data: [HP, ATTACK, DEFENSE, SPECIAL_ATTACK, SPECIAL_DEFENSE, SPEED],
+                fill: true,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgb(255, 99, 132)',
+                pointBackgroundColor: 'rgb(255, 99, 132)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(255, 99, 132)'
+            }]
+        };
+
+     
+        // Get a reference to the existing chart instance
+        var existingChart = Chart.getChart("pokemonStatscanvas");
+
+        // Destroy the existing chart instance
+        if (existingChart) {
+            existingChart.destroy();
+        }
+
+
+
+        var options = {
+            scale: {
+                pointLabels: [],
+                angleLines: {
+                    display: true
+                },
+                ticks: {
+                    suggestedMin: 0,
+                    suggestedMax: 100
+                }
+            },
+            elements: {
+                line: {
+                    borderWidth: 1
+                }
+            },
+            animation: {
+                duration: 2000, 
+                delay: 500 
+            }
+        };
+          
+
+        
+
+
         pokemonFlavorText(name.toLowerCase());
+
+        var ctx = document.getElementById("pokemonStatscanvas").getContext("2d");
+        new Chart(ctx, {
+            type: 'radar',
+            data: dataRadarChart,
+            options: options
+        });
         pokemonStats.innerHTML = '<h6>HP</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+HP+'%" aria-valuenow="'+HP+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>ATTACK</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+ATTACK+'%" aria-valuenow="'+ATTACK+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>DEFENSE</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+DEFENSE+'%" aria-valuenow="'+DEFENSE+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>SPECIAL ATTACK</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+SPECIAL_ATTACK+'%" aria-valuenow="'+SPECIAL_ATTACK+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>SPECIAL DEFENSE</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+SPECIAL_DEFENSE+'%" aria-valuenow="'+SPECIAL_DEFENSE+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>SPEED</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+SPEED+'%" aria-valuenow="'+SPEED+'%" aria-valuemin="0" aria-valuemax="100"></div></div>';
-        // tableInit();
+        // existingChart.innerHTML = '<h6>HP</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+HP+'%" aria-valuenow="'+HP+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>ATTACK</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+ATTACK+'%" aria-valuenow="'+ATTACK+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>DEFENSE</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+DEFENSE+'%" aria-valuenow="'+DEFENSE+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>SPECIAL ATTACK</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+SPECIAL_ATTACK+'%" aria-valuenow="'+SPECIAL_ATTACK+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>SPECIAL DEFENSE</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+SPECIAL_DEFENSE+'%" aria-valuenow="'+SPECIAL_DEFENSE+'%" aria-valuemin="0" aria-valuemax="100"></div></div><h6>SPEED</h6><div class="progress"><div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: '+SPEED+'%" aria-valuenow="'+SPEED+'%" aria-valuemin="0" aria-valuemax="100"></div></div>';
     })
     .catch(error => console.error('On get student error', error))
 

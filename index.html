@@ -45,18 +45,16 @@
                         <a class="nav-link" href="pokegallery.html">PokeGallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pokecard.html">PokeCard</a>
+                        <a class="nav-link" href="pokecard2.html">PokeCard</a>
                     </li>
                 </ul>
                 </div>
             </div>
         </nav>
 
-
     </header>
 
     <main>
-
         <div class="hero d-none d-lg-block">
             <video autoplay muted loop>
                 <source src="assets/video/pokemonVideo1_edit4.mp4" type="video/mp4">
@@ -532,7 +530,7 @@
 
     </footer>
 
-
+ 
     <!-- Modal -->
     <div class="modal modal-lg fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-keyboard="false"  data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog modal-dialog-scrollable">
@@ -543,7 +541,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <div class="row">
+                        <div class="row"> 
                             
 
                                 <div class="container">
@@ -643,15 +641,25 @@
                                         </ul>
                                     </div>
 
-                                    
-
                                     <div id="description" class="card-body tab">
                                         <div style="width: 100%;">
                                             <div class="row">
-                                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
                                                     <img class="modal-pokemon" src="">
                                                 </div>
         
+                                                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
+
+                                                        <!-- <div class="container"> -->
+                                                            <canvas id="pokemonStatscanvas" style="width: 100%px; height: 100%;"></canvas>
+
+                                                            <p id="pokemonDescription"></p>
+                                                        <!-- </div> -->
+                                                       
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
                                                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                                     <p id="pokemonDescription"></p>
                                                 </div>
@@ -662,8 +670,10 @@
                                     <div id="attributes" class="card-body tab" style="display:none">
                                         <div class="container">
                                             <div class="row">
+
                                                 <div id="pokemonStats">
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -718,6 +728,8 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js" integrity="sha512-tQQXRDB2wEmuJGtFrmmoFYzNTq8StA1XJrfO0OQbbTxd9G0CwaTDL6/C1y805IlvBVrMwOqob1kf6r/2U5XXVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="assets/js/index.js"></script>
 

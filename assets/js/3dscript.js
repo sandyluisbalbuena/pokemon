@@ -95,9 +95,18 @@ function threeDfunction(image){
     cardGroup.add(frontMesh);
     cardGroup.add(backMesh);
 
-    function animate() {
+    function animate(time) {
+
+        time *= 0.003;  // seconds
+
+
+        // mesh.rotation.x = time * 0.5;
+        // mesh.rotation.y = time * 1;
+
+
         requestId = requestAnimationFrame(animate);
-        cardGroup.rotation.y += 0.01;
+        cardGroup.rotation.y = time * 1;
+        // cardGroup.rotation.y += 0.01;
         renderer.render(scene, camera);
     }
 

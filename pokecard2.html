@@ -30,32 +30,32 @@
 
         <nav class="navbar navbar-expand-sm text-center">
             <div class="container">
-              <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="#">
                 <img src="assets/images/pokemonBrandName.png" alt="" width="100px">
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pokegallery.html">PokeGallery</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active"  aria-current="page" href="#" disabled>PokeCard</a>
-                  </li>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-xs-center text-sm-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" disabled>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pokegallery.html">PokeGallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" disabled>PokeCard</a>
+                    </li>
                 </ul>
-              </div>
+                </div>
             </div>
-          </nav>
+        </nav>
 
     </header>
 
-    <!-- <main>
-        
+    <main>
+
         <div class="hero d-none d-lg-block">
             <video autoplay muted loop style="background-color: azure;">
                 <source src="assets/video/scarlet-violet-large.mp4" type="video/mp4">
@@ -71,9 +71,9 @@
         <div style="height: 100vh; background-image: url(assets/images/pokemoncard.png); background-size: 45%; background-repeat: no-repeat; background-position: center;"></div>
 
         <div class="paper1">
-            <div class="container" >
-                <div class="row mt-5">
+            <div class="container">
 
+                <div class="row" id="cardsearch">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
                         <div class="card">
                             <div class="card-body">
@@ -81,16 +81,15 @@
                                     <label for="pokemonName" class="form-label">Pokemon Card Name...</label>
                                     <input type="text" class="form-control" id="pokemonName" onkeypress="handleKeyPress(event)">
                                 </div>
-
+    
                                 <button class="btn btn-primary" style="width: 100%;" onclick="pokemonCardApi();">Search</button>
                             </div>
                         </div>
                     </div>
-
-
+    
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
                         <div id="cardGallery" class="cardGallery" style="justify-content: center;">
-
+    
                             <table class="table table-hover" id="myTable"  tyle="height: 400px; overflow: auto;">
                                 <thead>
                                     <tr>
@@ -111,35 +110,34 @@
                                     </tr>
                                 </tbody>
                             </table>
-
+    
                         </div>
                     </div>
-              
-                    <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-bs-backdrop="static" data-bs-keyboard="false" >
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="destroythreeDfunction()"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div id="canvas-container" class="container"></div>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn btn-success" onclick="rotateCard()">Rotate</button>
-                                <button class="btn btn-secondary" data-bs-dismiss="modal" onclick="destroythreeDfunction()">Close</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
                 </div>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-bs-backdrop="static" data-bs-keyboard="false" >
+                    <div class="modal-dialog  modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="destroythreeDfunction()"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="canvas-container" class="container"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" data-bs-dismiss="modal" onclick="destroythreeDfunction()">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-    </main> -->
+    </main>
 
-    <!-- <footer class="text-center text-white" style="width: 100%; background-color: #595555;">
+    <footer class="text-center text-white" style="width: 100%; background-color: #595555;">
         <div class="container p-4">
 
             <section class="mb-4">
@@ -167,7 +165,7 @@
                 ><i class="fab fa-github"></i
                 ></a>
             </section>
-
+    
             <section>
                 <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                     <div class="row">
@@ -188,20 +186,21 @@
                         <label for="name">Message</label>
                         <textarea class="form-control" name="message" rows="10" required=""></textarea>
                     </div>
+           
                     <div class="text-center my-3">
                         <button type="submit" class="btn btn-secondary">Send Message</button>
                     </div>
                 </form>
             </section>
-        
+      
         </div>
     
         <div class="text-center p-3" style="background-color: #BD4242;">
             © 2020 Copyright:
-            <a class="text-white" href="https://sandy-luis-balbuena.epizy.com//">sandy-luis-balbuena.epizy.com</a>
+            <a class="text-white" href="https://sandy-luis-balbuena.epizy.com/">sandy-luis-balbuena.epizy.com</a>
         </div>
 
-    </footer> -->
+    </footer>
 
     <button class="btn" id="back-to-top">
         <i class="fa-solid fa-arrow-up"></i>
@@ -213,8 +212,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js" integrity="sha512-tQQXRDB2wEmuJGtFrmmoFYzNTq8StA1XJrfO0OQbbTxd9G0CwaTDL6/C1y805IlvBVrMwOqob1kf6r/2U5XXVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js" integrity="sha512-E/yP5UiPXb6VelX+dFLuUD+1IZw/Kz7tMncFTYbtoNSCdRZPFoGN3jZ2p27VUxHEkhbPiLuZhZpVEXxk9wAHCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="assets/js/3dscript.js"></script>
