@@ -1,5 +1,7 @@
 var loader = document.getElementById("preloader");
 
+//284445
+
 window.addEventListener("load", function(){
     loader.style.display = "none";
 });
@@ -315,14 +317,18 @@ function pokemonApi(name)
             },
             animation: {
                 duration: 2000, 
-                delay: 500 
+                delay: 500,
+                tension: {
+                    duration: 1000,
+                    easing: 'linear',
+                    from: -0.2,
+                    to: 0,
+                    loop: true
+                  }
+
             }
         };
           
-
-        
-
-
         pokemonFlavorText(name.toLowerCase());
 
         var ctx = document.getElementById("pokemonStatscanvas").getContext("2d");
@@ -433,7 +439,8 @@ function clearTableData()
     // table.destroy();
 }
 
-function openTab(tabname) {
+function openTab(tabname) 
+{
     let i;
     let x = document.getElementsByClassName("card-body tab");
     for (i = 0; i < x.length; i++) {
@@ -453,15 +460,15 @@ function openTab(tabname) {
 
 const backToTopButton = document.getElementById('back-to-top');
 
-    window.addEventListener('scroll', () => {
+window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
         backToTopButton.classList.add('show');
     } else {
         backToTopButton.classList.remove('show');
     }
-    });
+});
 
-    backToTopButton.addEventListener('click', () => {
+backToTopButton.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -478,6 +485,121 @@ function modalDescription(descriptionString)
         showCursor: false,
     });
 }
+
+var targetsection;
+var spinner;
+var targetbutton;
+var customAttributeValue;
+
+function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
+{
+    targetsection = document.getElementById(targetElement);
+    spinner = document.getElementById(spinnerId);
+    targetbutton = document.getElementById(button);
+    customAttributeValue = targetbutton.getAttribute("customattribute");
+
+    // console.log(customAttributeValue);
+
+    // let toggle = buttontoggle;
+
+
+    if(customAttributeValue == 0){
+
+
+        spinner.style.display = 'block';
+
+
+        targetbutton.setAttribute("customattribute", "1");
+        
+        let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit='+pokemonEnd+'&offset='+pokemonStart;
+        targetsection.innerHTML = '';
+
+        // axios.interceptors.request.use(config => {
+        //     spinner.innerHTML = '<div class="spinner-border text-white" role="status"></div>';
+        //     return config;
+        // }, error => {
+        //     console.error(error);
+        // });
+
+        // Making a GET request using an axios instance from a connected library
+        axios.get(`${RAPIDAPI_API_URL}`)
+        .then(response => {
+
+            const pokemonNames = response.data.results;
+            var newElement = document.createElement('div');
+            newElement.classList.add('row');
+
+
+            pokemonNames.forEach((pokemon) => {
+                // newElement.innerHTML += '<div class="col-1"><img src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/1x/'+pokemon.name+'.png" style="width:200%;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="'+pokemon.name+'" title="'+pokemon.name+'"></div>';
+                newElement.innerHTML += '<div href="https://img.pokemondb.net/sprites/home/normal/'+pokemon.name+'.png" class="col-1 venobox" data-gall="mypokemon2dgallery" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Hello! Im '+pokemon.name.charAt(0).toUpperCase()+ pokemon.name.slice(1)+'!"><img id="'+pokemon.name+'png" class="img2dpokemon" src="https://img.pokemondb.net/sprites/home/normal/'+pokemon.name+'.png" style="width:200%;"></div>';
+            });
+
+            targetsection.appendChild(newElement);
+            spinner.style.display = 'none';
+
+
+        })
+        .catch(error => console.error('On get pokemon error', error))
+        .then(() => { 
+            $(function () {
+                $("[data-bs-toggle='tooltip']").tooltip();
+            });
+
+            new VenoBox({
+                selector: ".venobox"
+            });
+        }) 
+    }
+    else{
+        targetbutton.setAttribute("customattribute", "0");
+    }
+
+}
+
+function pokemontwoDApi(pokemons) 
+{
+    // console.log(pokemons);
+    const targetsection = document.getElementById('pokemontwoDApi');
+    const targetsection2 = document.getElementById('pokemontwoDApitwo');
+    // const tooltips = document.getElementById('tooltips');
+    let pokemonsname2d = 0;
+
+
+    for(let i=0; i<21; i++)
+    {
+        targetsection.innerHTML += '<div class="row" id="pokemontwoDApiRow'+i+'">';
+        var targetsectionrow = document.getElementById('pokemontwoDApiRow'+i);
+
+        for(let j=0; j<12; j++){
+            if(pokemonsname2d<151){
+                targetsectionrow.innerHTML += '<div class="col-1"><img src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/1x/'+pokemons[pokemonsname2d].name+'.png" style="width:250%;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="'+pokemons[pokemonsname2d].name+'" title="'+pokemons[pokemonsname2d].name+'"></div>';
+                pokemonsname2d++;
+            }
+        }
+
+        if(pokemonsname2d>=151){
+            targetsection2.innerHTML += '<div class="row" id="pokemontwoDApiRowtwo'+i+'">';
+            var targetsectionrow2 = document.getElementById('pokemontwoDApiRowtwo'+i);
+        }
+
+        
+
+        for(let j=0; j<12; j++){
+            if(pokemonsname2d>=151){
+                if(pokemons[pokemonsname2d].name == 'unown'){
+                    targetsectionrow2.innerHTML += '<div class="col-1"><img src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/1x/'+pokemons[pokemonsname2d].name+'-s.png" style="width:250%;"></div>';
+                }else{
+                    targetsectionrow2.innerHTML += '<div class="col-1"><img src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/1x/'+pokemons[pokemonsname2d].name+'.png" style="width:250%;"></div>';
+                }
+                pokemonsname2d++;
+            }
+        }
+
+    }
+}
+
+
 
 
 

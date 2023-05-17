@@ -6,21 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon</title>
     <link rel="icon" href="https://pngimg.com/uploads/pokemon_logo/small/pokemon_logo_PNG12.png">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Poppins:wght@200&display=swap" rel="stylesheet">
-
-
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.4/venobox.css" integrity="sha512-FklhNXzHcdzrbf6AqtmZo3hOse+bIr/ofmEpzZmNWftOTsj8qWasNgJN6Y8d71grmcZZZa1bbHbXFbTTPCa3pA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -72,275 +66,401 @@
         <div class="paper1">
             <div class="container">
 
-                <div class="row">
-                    <div class="col-12 d-lg-none">
+                <section>
+                    <div class="row">
+                        <div class="col-12 d-lg-none">
 
-                        <div class="container">
-                        <h2 class="mb-5">Pokemon Selection</h2>
+                            <div class="container">
+                            <h2 class="mb-5">Pokemon Selection</h2>
 
+                            </div>
+
+
+                            <swiper-container>
+
+                                <swiper-slide>
+                                    <div class="card poke-card" data-name="Bulbasaur" data-bs-toggle="modal" data-bs-target="#exampleModal" id="item12">
+                                        <div class="image-wrapper-md">
+                                            <img class="pokemonImageCarousel-md" src="https://www.professorlotus.com/Sprites/Bulbasaur.gif"   alt="...">
+                                        </div>
+                                        <div class="card-body-md" style="background-color: #408861;">
+                                            <h5 class="card-title text-white">Bulbasaur</h5>
+                                        </div>
+                                    </div>
+                                </swiper-slide>
+
+                                <swiper-slide>
+                                    <div class="card poke-card" data-name="Charmander" data-bs-toggle="modal" data-bs-target="#exampleModal" id="item13">
+                                        <div class="image-wrapper-md">
+                                            <img class="pokemonImageCarousel-md" src="https://www.professorlotus.com/Sprites/Charmander.gif"   alt="...">
+                                        </div>
+                                        <div class="card-body-md" style="background-color: #F66A03;">
+                                            <h5 class="card-title text-white">Charmander</h5>
+                                        </div>
+                                    </div>
+                                </swiper-slide>
+
+                                <swiper-slide>
+                                    <div class="card poke-card" data-name="Squirtle" data-bs-toggle="modal" data-bs-target="#exampleModal" id="item14">
+                                        <div class="image-wrapper-md">
+                                            <img class="pokemonImageCarousel-md" src="https://www.professorlotus.com/Sprites/Squirtle.gif"   alt="...">
+                                        </div>
+                                        <div class="card-body-md" style="background-color: #87E0FF;">
+                                            <h5 class="card-title text-white">Squirtle</h5>
+                                        </div>
+                                    </div>
+                                </swiper-slide>
+
+                            </swiper-container>
                         </div>
-
-
-                        <swiper-container>
-
-                            <swiper-slide>
-                                <div class="card poke-card" data-name="Bulbasaur" data-bs-toggle="modal" data-bs-target="#exampleModal" id="item12">
-                                    <div class="image-wrapper-md">
-                                        <img class="pokemonImageCarousel-md" src="https://www.professorlotus.com/Sprites/Bulbasaur.gif"   alt="...">
-                                    </div>
-                                    <div class="card-body-md" style="background-color: #408861;">
-                                        <h5 class="card-title text-white">Bulbasaur</h5>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-
-                            <swiper-slide>
-                                <div class="card poke-card" data-name="Charmander" data-bs-toggle="modal" data-bs-target="#exampleModal" id="item13">
-                                    <div class="image-wrapper-md">
-                                        <img class="pokemonImageCarousel-md" src="https://www.professorlotus.com/Sprites/Charmander.gif"   alt="...">
-                                    </div>
-                                    <div class="card-body-md" style="background-color: #F66A03;">
-                                        <h5 class="card-title text-white">Charmander</h5>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-
-                            <swiper-slide>
-                                <div class="card poke-card" data-name="Squirtle" data-bs-toggle="modal" data-bs-target="#exampleModal" id="item14">
-                                    <div class="image-wrapper-md">
-                                        <img class="pokemonImageCarousel-md" src="https://www.professorlotus.com/Sprites/Squirtle.gif"   alt="...">
-                                    </div>
-                                    <div class="card-body-md" style="background-color: #87E0FF;">
-                                        <h5 class="card-title text-white">Squirtle</h5>
-                                    </div>
-                                </div>
-                            </swiper-slide>
-
-                        </swiper-container>
                     </div>
-                </div>
+                </section>
+                
+                <section>
+                    <div class="row">
+                        <div class="col-12 d-none d-lg-block">
+                            <div class="card p-4">
 
-                <div class="row">
-                    <div class="col-12 d-none d-lg-block">
-                        <div class="card p-4">
+                                <div class="card-body">
 
-                            <div class="card-body">
-
-                                <h2 class="mb-5">Pokemon Selection</h2>
+                                    <h2 class="mb-5">Pokemon Selection</h2>
 
 
-                                <div id="carouselExampleInterval" class="carousel" data-bs-ride="carousel"  style="text-align: center;">
-                                    <div class="carousel-inner">
+                                    <div id="carouselExampleInterval" class="carousel" data-bs-ride="carousel"  style="text-align: center;">
+                                        <div class="carousel-inner">
 
-                                        <div id="item1" class="carousel-item hvr-float" data-name="Bulbasaur" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <div class="card poke-card">
-                                                <div class="image-wrapper">
-                                                    <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Bulbasaur.gif"   alt="...">
-                                                </div>
-                                                <div class="card-body" style="background-color: #408861;">
-                                                    <h5 class="card-title text-white">Bulbasaur</h5>
+                                            <div id="item1" class="carousel-item hvr-float" data-name="Bulbasaur" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <div class="card poke-card">
+                                                    <div class="image-wrapper">
+                                                        <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Bulbasaur.gif"   alt="...">
+                                                    </div>
+                                                    <div class="card-body" style="background-color: #408861;">
+                                                        <h5 class="card-title text-white">Bulbasaur</h5>
+                                                    </div>
                                                 </div>
                                             </div>
+
+                                            <div id="item2" class="carousel-item hvr-float" data-name="Charmander" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <div class="card poke-card">
+                                                    <div class="image-wrapper">
+                                                        <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Charmander.gif"  alt="...">
+                                                    </div>
+                                                    <div class="card-body" style="background-color: #F66A03;">
+                                                        <h5 class="card-title text-white">Charmander</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="item3" class="carousel-item hvr-float" data-name="Squirtle" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <div class="card poke-card">
+                                                    <div class="image-wrapper">
+                                                        <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Squirtle.gif"  alt="...">
+                                                    </div>
+                                                    <div class="card-body" style="background-color: #87E0FF;">
+                                                        <h5 class="card-title text-white">Squirtle</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="item4" class="carousel-item hvr-float" data-name="Chikorita" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <div class="card poke-card">
+                                                    <div class="image-wrapper">
+                                                        <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Chikorita.gif"  alt="...">
+                                                    </div>
+                                                    <div class="card-body" style="background-color: #408861;">
+                                                        <h5 class="card-title text-white">Chikorita</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="item5" class="carousel-item hvr-float" data-name="Cyndaquil" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <div class="card poke-card">
+                                                    <div class="image-wrapper">
+                                                        <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Cyndaquil.gif"  alt="...">
+                                                    </div>
+                                                    <div class="card-body" style="background-color: #F66A03;">
+                                                        <h5 class="card-title text-white">Cyndaquil</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="item6" class="carousel-item hvr-float" data-name="Totodile" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <div class="card poke-card">
+                                                    <div class="image-wrapper">
+                                                        <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Totodile.gif"  alt="...">
+                                                    </div>
+                                                    <div class="card-body" style="background-color: #87E0FF;">
+                                                        <h5 class="card-title text-white">Totodile</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="item7" class="carousel-item hvr-float" data-name="Oddish" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <div class="card poke-card">
+                                                    <div class="image-wrapper">
+                                                        <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Oddish.gif"  alt="...">
+                                                    </div>
+                                                    <div class="card-body" style="background-color: #408861;">
+                                                        <h5 class="card-title text-white">Oddish</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="item8" class="carousel-item hvr-float" data-name="Torchic" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <div class="card poke-card">
+                                                    <div class="image-wrapper">
+                                                        <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Torchic.gif"  alt="...">
+                                                    </div>
+                                                    <div class="card-body" style="background-color: #F66A03;">
+                                                        <h5 class="card-title text-white">Torchic</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="item9" class="carousel-item hvr-float" data-name="Mudkip" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <div class="card poke-card">
+                                                    <div class="image-wrapper">
+                                                        <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Mudkip.gif"  alt="...">
+                                                    </div>
+                                                    <div class="card-body" style="background-color: #87E0FF;">
+                                                        <h5 class="card-title text-white">Mudkip</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="item10" class="carousel-item hvr-float" data-name="Geodude" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <div class="card poke-card">
+                                                    <div class="image-wrapper">
+                                                        <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Geodude.gif"  alt="...">
+                                                    </div>
+                                                    <div class="card-body" style="background-color: #4C493C;">
+                                                        <h5 class="card-title text-white">Geodude</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="item11" class="carousel-item hvr-float" data-name="Bellsprout" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <div class="card poke-card">
+                                                    <div class="image-wrapper">
+                                                        <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Bellsprout.gif"  alt="...">
+                                                    </div>
+                                                    <div class="card-body" style="background-color: #408861;">
+                                                        <h5 class="card-title text-white">Bellsprout</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
 
-                                        <div id="item2" class="carousel-item hvr-float" data-name="Charmander" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <div class="card poke-card">
-                                                <div class="image-wrapper">
-                                                    <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Charmander.gif"  alt="...">
-                                                </div>
-                                                <div class="card-body" style="background-color: #F66A03;">
-                                                    <h5 class="card-title text-white">Charmander</h5>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <button class="carousel-control-prev carousel-btn" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev" style="z-index: 3;">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next" style="z-index: 3;">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                        </button>
 
-                                        <div id="item3" class="carousel-item hvr-float" data-name="Squirtle" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <div class="card poke-card">
-                                                <div class="image-wrapper">
-                                                    <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Squirtle.gif"  alt="...">
-                                                </div>
-                                                <div class="card-body" style="background-color: #87E0FF;">
-                                                    <h5 class="card-title text-white">Squirtle</h5>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-                                        <div id="item4" class="carousel-item hvr-float" data-name="Chikorita" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <div class="card poke-card">
-                                                <div class="image-wrapper">
-                                                    <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Chikorita.gif"  alt="...">
-                                                </div>
-                                                <div class="card-body" style="background-color: #408861;">
-                                                    <h5 class="card-title text-white">Chikorita</h5>
-                                                </div>
-                                            </div>
-                                        </div>
+                <section>
 
-                                        <div id="item5" class="carousel-item hvr-float" data-name="Cyndaquil" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <div class="card poke-card">
-                                                <div class="image-wrapper">
-                                                    <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Cyndaquil.gif"  alt="...">
-                                                </div>
-                                                <div class="card-body" style="background-color: #F66A03;">
-                                                    <h5 class="card-title text-white">Cyndaquil</h5>
-                                                </div>
-                                            </div>
-                                        </div>
+                    <div class="container">
+                        <div class="row">
 
-                                        <div id="item6" class="carousel-item hvr-float" data-name="Totodile" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <div class="card poke-card">
-                                                <div class="image-wrapper">
-                                                    <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Totodile.gif"  alt="...">
-                                                </div>
-                                                <div class="card-body" style="background-color: #87E0FF;">
-                                                    <h5 class="card-title text-white">Totodile</h5>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <!-- <button type="button" class="btn btn-secondary"
+                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                    data-bs-custom-class="custom-tooltip"
+                                    data-bs-title="This top tooltip is themed via CSS variables.">
+                            Custom tooltip
+                            </button> -->
 
-                                        <div id="item7" class="carousel-item hvr-float" data-name="Oddish" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <div class="card poke-card">
-                                                <div class="image-wrapper">
-                                                    <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Oddish.gif"  alt="...">
-                                                </div>
-                                                <div class="card-body" style="background-color: #408861;">
-                                                    <h5 class="card-title text-white">Oddish</h5>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div id="item8" class="carousel-item hvr-float" data-name="Torchic" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <div class="card poke-card">
-                                                <div class="image-wrapper">
-                                                    <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Torchic.gif"  alt="...">
-                                                </div>
-                                                <div class="card-body" style="background-color: #F66A03;">
-                                                    <h5 class="card-title text-white">Torchic</h5>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <div class="col-6" style="text-align: center;">
+                                <p>
+                                    <button id="gen1btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(0,151,'pokemontwoDApi','gen1spinner','gen1btn')">
+                                        <div style="display: flex; justify-content: space-between;">Generation 1 <div id="gen1spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseExample1">
+                                    <div class="card card-body"  id="pokemontwoDApi">
+                                    </div>
+                                </div>
 
-                                        <div id="item9" class="carousel-item hvr-float" data-name="Mudkip" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <div class="card poke-card">
-                                                <div class="image-wrapper">
-                                                    <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Mudkip.gif"  alt="...">
-                                                </div>
-                                                <div class="card-body" style="background-color: #87E0FF;">
-                                                    <h5 class="card-title text-white">Mudkip</h5>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <p>
+                                    <button id="gen3btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(251,135,'pokemontwoDApithree','gen3spinner','gen3btn')">
+                                        <div style="display: flex; justify-content: space-between;">Generation 3 <div id="gen3spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseExample3">
+                                    <div class="card card-body"  id="pokemontwoDApithree">
+                                    </div>
+                                </div>
 
-                                        <div id="item10" class="carousel-item hvr-float" data-name="Geodude" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <div class="card poke-card">
-                                                <div class="image-wrapper">
-                                                    <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Geodude.gif"  alt="...">
-                                                </div>
-                                                <div class="card-body" style="background-color: #4C493C;">
-                                                    <h5 class="card-title text-white">Geodude</h5>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <p>
+                                    <button id="gen5btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(493,156,'pokemontwoDApifive','gen5spinner','gen5btn')">
+                                        <div style="display: flex; justify-content: space-between;">Generation 5 <div id="gen5spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseExample5">
+                                    <div class="card card-body"  id="pokemontwoDApifive">
+                                    </div>
+                                </div>
 
-                                        <div id="item11" class="carousel-item hvr-float" data-name="Bellsprout" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <div class="card poke-card">
-                                                <div class="image-wrapper">
-                                                    <img class="pokemonImageCarousel" src="https://www.professorlotus.com/Sprites/Bellsprout.gif"  alt="...">
+                                <p>
+                                    <button id="gen7btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(721,86,'pokemontwoDApiseven','gen7spinner','gen7btn')">
+                                        <div style="display: flex; justify-content: space-between;">Generation 7 <div id="gen7spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseExample7">
+                                    <div class="card card-body"  id="pokemontwoDApiseven">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <p>
+                                    <button id="gen2btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(151,100,'pokemontwoDApitwo','gen2spinner','gen2btn')">
+                                        <div style="display: flex; justify-content: space-between;">Generation 2 <div id="gen2spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseExample2">
+                                    <div class="card card-body"  id="pokemontwoDApitwo">
+                                    </div>
+                                </div>
+
+                                <p>
+                                    <button id="gen4btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(386,107,'pokemontwoDApifour','gen4spinner','gen4btn')">
+                                        <div style="display: flex; justify-content: space-between;">Generation 4 <div id="gen4spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseExample4">
+                                    <div class="card card-body"  id="pokemontwoDApifour">
+                                    </div>
+                                </div>
+
+                                <p>
+                                    <button id="gen6btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(649,72,'pokemontwoDApisix','gen6spinner','gen6btn')">
+                                        <div style="display: flex; justify-content: space-between;">Generation 6 <div id="gen6spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseExample6">
+                                    <div class="card card-body"  id="pokemontwoDApisix">
+                                    </div>
+                                </div>
+
+                                <p>
+                                    <button id="gen8btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample8" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(807,96,'pokemontwoDApieight','gen8spinner','gen8btn')">
+                                        <div style="display: flex; justify-content: space-between;">Generation 8 <div id="gen8spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseExample8">
+                                    <div class="card card-body"  id="pokemontwoDApieight">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                    </div>
+
+                   <!-- <div id="tooltips" style="display: none;">
+                   </div> -->
+                </section>
+
+                <!-- <button data-template="one" id="one" onclick="tip1()">One</button>
+                <button data-template="two">Two</button>
+                <button data-template="three">Three</button>
+
+                <div style="display: none;">
+                    <div id="one">
+                        <strong>Content for `one`</strong>
+                    </div>
+                    <div id="two">
+                        <strong>Content for `two`</strong>
+                    </div>
+                    <div id="three">
+                        <strong>Content for `three`</strong>
+                    </div>
+                </div> -->
+
+                <section>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card py-4">
+                                <div class="card-body">
+
+                                    <h2 class="mb-5">Videos</h2>
+
+                                    <div style="height: 500px; overflow-x: hidden;">
+
+                                        <div class="container">
+
+                                            <div class="row">
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                                                    <iframe width="100%" src="https://www.youtube.com/embed/VU87z_rKeF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                                 </div>
-                                                <div class="card-body" style="background-color: #408861;">
-                                                    <h5 class="card-title text-white">Bellsprout</h5>
+                                                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-6 d-none d-sm-block">
+                                                    <h5 class="card-title">Buffed CINDERACE Pyroball and Unite Move are straight up BROKEN | Pokemon Unite</h5>
+
+                                                    <p class="card-text d-none d-md-block">Thank you all for watching! Stay tuned and subscribe to my YouTube Channel to always be kept up to date about the newest Pokemon Unite Pokemon, Pokemon Unite Tier Lists, Pokemon Unite Balance Patches, Pokemon Unite Patches, Pokemon Unite Gameplay, Pokemon Unite Guides, Pokemon Unite Boost Emblem, Pokemon Unite Boost Emblems, and Pokemon Unite Highlights!</p>
                                                 </div>
                                             </div>
+
+                                            <hr>
+
+                                            <div class="row">
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                                                    <iframe width="100%" src="https://www.youtube.com/embed/Z6dX4aIdsR4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                </div>
+                                                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-6 d-none d-sm-block">
+                                                    <h5 class="card-title">Glaceon Might Be The MOST OP Thing In Pokemon Unite</h5>
+
+                                                    <p class="card-text d-none d-md-block">Wow what a wild balance patch for Glaceon... this thing went from being pretty dang good to just being absolutely nuts. Check out two matches with the new buffed Glaceon build. Yeehaw  Become a channel member today!:</p>
+                                                    <p class="card-text d-none d-md-block">Beginner tips and tricks, Beginner guide, Advanced guide, glaceon gameplay, glaceon build, glaceon cool down, glaceon  emblems</p>
+                                                </div>
+                                            </div>  
+
+                                            <hr>
+
+                                            <div class="row">
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                                                    <iframe width="100%" src="https://www.youtube.com/embed/Cyoy7iGZxUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                </div>
+                                                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-6 d-none d-sm-block">
+                                                    <h5 class="card-title">THESE SCIZOR BUFFS FEEL INSANE! (Pokemon Unite)</h5>
+
+                                                    <p class="card-text d-none d-md-block">FTC Legal Disclaimer - Some links found in the description box of my videos may be affiliate links, meaning I will make commission on sales you make through my link. This is at no extra cost to you to use my links/codes, it's just one more way to support me and my channel! :)</p>
+                                                </div>
+                                            </div>
+
+                                            <hr>
+
+                                            <div class="row">
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                                                    <iframe width="100%" src="https://www.youtube.com/embed/lJUC5M7XkD8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                </div>
+                                                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-6 d-none d-sm-block">
+                                                    <h5 class="card-title">One Arrow = One KO Fully Stacked Decidueye feels ILLEGAL to play | Pokemon Unite</h5>
+
+                                                    <p class="card-text d-none d-md-block">Thank you all for watching! Stay tuned and subscribe to my YouTube Channel to always be kept up to date about the newest Pokemon Unite Pokemon, Pokemon Unite Tier Lists, Pokemon Unite Balance Patches, Pokemon Unite Patches, Pokemon Unite Gameplay, Pokemon Unite Guides, Pokemon Unite Boost Emblem, Pokemon Unite Boost Emblems, and Pokemon Unite Highlights!</p>
+                                                </div>
+                                            </div>
+
                                         </div>
 
                                     </div>
-
-                                    <button class="carousel-control-prev carousel-btn" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev" style="z-index: 3;">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next carousel-btn" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next" style="z-index: 3;">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                    </button>
 
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card py-4">
-                            <div class="card-body">
-
-                                <h2 class="mb-5">Videos</h2>
-
-                                <div style="height: 500px; overflow-x: hidden;">
-
-                                    <div class="container">
-
-                                        <div class="row">
-                                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                                                <iframe width="100%" src="https://www.youtube.com/embed/VU87z_rKeF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                            </div>
-                                            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-6 d-none d-sm-block">
-                                                <h5 class="card-title">Buffed CINDERACE Pyroball and Unite Move are straight up BROKEN | Pokemon Unite</h5>
-
-                                                <p class="card-text d-none d-md-block">Thank you all for watching! Stay tuned and subscribe to my YouTube Channel to always be kept up to date about the newest Pokemon Unite Pokemon, Pokemon Unite Tier Lists, Pokemon Unite Balance Patches, Pokemon Unite Patches, Pokemon Unite Gameplay, Pokemon Unite Guides, Pokemon Unite Boost Emblem, Pokemon Unite Boost Emblems, and Pokemon Unite Highlights!</p>
-                                            </div>
-                                        </div>
-
-                                        <hr>
-
-                                        <div class="row">
-                                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                                                <iframe width="100%" src="https://www.youtube.com/embed/Z6dX4aIdsR4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                            </div>
-                                            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-6 d-none d-sm-block">
-                                                <h5 class="card-title">Glaceon Might Be The MOST OP Thing In Pokemon Unite</h5>
-
-                                                <p class="card-text d-none d-md-block">Wow what a wild balance patch for Glaceon... this thing went from being pretty dang good to just being absolutely nuts. Check out two matches with the new buffed Glaceon build. Yeehaw  Become a channel member today!:</p>
-                                                <p class="card-text d-none d-md-block">Beginner tips and tricks, Beginner guide, Advanced guide, glaceon gameplay, glaceon build, glaceon cool down, glaceon  emblems</p>
-                                            </div>
-                                        </div>  
-
-                                        <hr>
-
-                                        <div class="row">
-                                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                                                <iframe width="100%" src="https://www.youtube.com/embed/Cyoy7iGZxUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                            </div>
-                                            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-6 d-none d-sm-block">
-                                                <h5 class="card-title">THESE SCIZOR BUFFS FEEL INSANE! (Pokemon Unite)</h5>
-
-                                                <p class="card-text d-none d-md-block">FTC Legal Disclaimer - Some links found in the description box of my videos may be affiliate links, meaning I will make commission on sales you make through my link. This is at no extra cost to you to use my links/codes, it's just one more way to support me and my channel! :)</p>
-                                            </div>
-                                        </div>
-
-                                        <hr>
-
-                                        <div class="row">
-                                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                                                <iframe width="100%" src="https://www.youtube.com/embed/lJUC5M7XkD8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                            </div>
-                                            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-6 d-none d-sm-block">
-                                                <h5 class="card-title">One Arrow = One KO Fully Stacked Decidueye feels ILLEGAL to play | Pokemon Unite</h5>
-
-                                                <p class="card-text d-none d-md-block">Thank you all for watching! Stay tuned and subscribe to my YouTube Channel to always be kept up to date about the newest Pokemon Unite Pokemon, Pokemon Unite Tier Lists, Pokemon Unite Balance Patches, Pokemon Unite Patches, Pokemon Unite Gameplay, Pokemon Unite Guides, Pokemon Unite Boost Emblem, Pokemon Unite Boost Emblems, and Pokemon Unite Highlights!</p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </section>
 
             </div>
         </div>
@@ -743,10 +863,12 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js" integrity="sha512-tQQXRDB2wEmuJGtFrmmoFYzNTq8StA1XJrfO0OQbbTxd9G0CwaTDL6/C1y805IlvBVrMwOqob1kf6r/2U5XXVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/venobox/dist/venobox.min.js"></script>
+    
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
 
     <script src="assets/js/index.js"></script>
 
