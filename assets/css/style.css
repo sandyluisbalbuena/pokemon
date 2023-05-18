@@ -529,9 +529,9 @@ swiper-container {
     overflow-y: auto;
 }
 
-@media (max-width: $screen-md-min) {
+/* @media (max-width: $screen-md-min) {
     .item {
         width: 100%;
         height: 100%;
     }
-}
+} */
