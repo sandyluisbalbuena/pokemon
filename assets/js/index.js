@@ -493,21 +493,36 @@ var customAttributeValue;
 
 function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
 {
+    let targetsectionfilters = document.getElementById('pokemonFilters');
+
     targetsection = document.getElementById(targetElement);
     spinner = document.getElementById(spinnerId);
     targetbutton = document.getElementById(button);
     customAttributeValue = targetbutton.getAttribute("customattribute");
 
-    // console.log(customAttributeValue);
+    var collapsegallery = document.getElementsByClassName('pokemon2dgallery');
 
-    // let toggle = buttontoggle;
+    console.log(collapsegallery);
+
+   
+
+
+
+    var className = targetsection.classList;
+
+
+    var $grid = $('.'+className.value);
+
+    $grid.isotope({
+        isResizeBound: false,
+        layoutMode: 'fitRows',
+    });
 
 
     if(customAttributeValue == 0){
-
-
         spinner.style.display = 'block';
-
+        // targetsectionfilters.innerHTML='<div class="spinner-border" role="status"></div>';
+        targetsectionfilters.innerHTML='';
 
         targetbutton.setAttribute("customattribute", "1");
         
@@ -529,29 +544,121 @@ function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
             var newElement = document.createElement('div');
             newElement.classList.add('row');
 
+            let pokemontypecounter = 0;
+
+            let datatypesfromresponse = [];
 
             pokemonNames.forEach((pokemon) => {
-                // newElement.innerHTML += '<div class="col-1"><img src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/1x/'+pokemon.name+'.png" style="width:200%;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="'+pokemon.name+'" title="'+pokemon.name+'"></div>';
-                newElement.innerHTML += '<div href="https://img.pokemondb.net/sprites/home/normal/'+pokemon.name+'.png" class="col-xl-1 col-lg-1 col-md-6 col-sm-12 col-xs-12 venobox" data-gall="mypokemon2dgallery" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Hello! Im '+pokemon.name.charAt(0).toUpperCase()+ pokemon.name.slice(1)+'!"><img id="'+pokemon.name+'png" class="img2dpokemon" src="https://img.pokemondb.net/sprites/home/normal/'+pokemon.name+'.png" style="width:100%;"></div>';
+
+                axios.get(`https://pokeapi.co/api/v2/pokemon/`+pokemon.name)
+                .then(response => {
+
+                    var newElementpokemon = document.createElement('div');
+
+                    if (!datatypesfromresponse.includes(response.data.types[0].type.name)) {
+                        datatypesfromresponse.push(response.data.types[0].type.name);
+                        // datatypesfromresponse[pokemontypecounter] = response.data.types[0].type.name;
+                        targetsectionfilters.innerHTML += '<div class="form-check form-check-inline"><input class="filter form-check-input" type="checkbox" id="inlineCheckbox'+response.data.types[0].type.name+'" data-category=".'+response.data.types[0].type.name+'" value="option1" data-is-checked="0"><label class="form-check-label" for="inlineCheckbox'+response.data.types[0].type.name+'"><img src="assets/images/pokemonTypes/'+response.data.types[0].type.name+'.png" width="50%"></label></div>';
+                    }
+
+                    newElementpokemon.classList.add(response.data.types[0].type.name); 
+                    newElementpokemon.classList.add('col-xl-1'); 
+                    newElementpokemon.classList.add('col-lg-2'); 
+                    newElementpokemon.classList.add('col-md-2'); 
+                    newElementpokemon.classList.add('col-sm-2'); 
+                    newElementpokemon.classList.add('col-xs-2'); 
+                    newElementpokemon.classList.add('venobox'); 
+                    newElementpokemon.setAttribute('href', 'https://img.pokemondb.net/sprites/home/normal/'+pokemon.name+'.png');
+                    newElementpokemon.setAttribute('data-gall', 'mypokemon2dgallery');
+                    newElementpokemon.setAttribute('data-bs-toggle', 'tooltip');
+                    newElementpokemon.setAttribute('data-bs-placement', 'top');
+                    newElementpokemon.setAttribute('data-bs-custom-class', 'custom-tooltip');
+                    newElementpokemon.setAttribute('data-bs-title', 'Hello! Im '+pokemon.name.charAt(0).toUpperCase()+ pokemon.name.slice(1)+'!');
+                    newElementpokemon.setAttribute('data-gall', 'mypokemon2dgallery');
+
+
+                    // newElement.innerHTML += '<div class="col-1"><img src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/1x/'+pokemon.name+'.png" style="width:200%;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="'+pokemon.name+'" title="'+pokemon.name+'"></div>';
+                    newElementpokemon.innerHTML += '<img id="'+pokemon.name+'png" class="img2dpokemon" src="https://img.pokemondb.net/sprites/home/normal/'+pokemon.name+'.png" style="width:100%; height:100%;">';
+                    $grid.isotope( 'insert',newElementpokemon  );
+
+                    newElement.appendChild(newElementpokemon);
+
+                    
+                })
+                .catch(error => console.error('On get pokemon error', error))
+                .then(() => { 
+                    $(function () {
+                        $("[data-bs-toggle='tooltip']").tooltip();
+                    });
+        
+                    new VenoBox({
+                        selector: ".venobox"
+                    });
+
+                    $(document).ready(function(){
+
+                        $('.filter').click(function(){
+                            let elements = document.getElementsByClassName('filter');
+                            let listofpokemontype = [];
+                        
+                            for (let i = 0; i < elements.length; i++) {
+                        
+                                if (elements[i].checked) {
+                                    listofpokemontype.push(elements[i].getAttribute('data-category'));
+                                }
+                            }
+                        
+                            $('.'+className.value).isotope({ filter: listofpokemontype.join(",") });
+                        });
+        
+                    });
+                }) 
+            
+            
             });
+
+
+            // let samplearray = [1,2,3];
+            // samplearray.push(4);
+
+            // console.log(samplearray[3]);
+
+            // console.log(datatypesfromresponse[1]);
+
 
             targetsection.appendChild(newElement);
             spinner.style.display = 'none';
 
+            
 
         })
         .catch(error => console.error('On get pokemon error', error))
         .then(() => { 
-            $(function () {
-                $("[data-bs-toggle='tooltip']").tooltip();
+
+         
+            $(document).ready(function(){
+            
+                for (var i = 0; i < collapsegallery.length; i++) {
+                    // console.log('wew');
+        
+                    if(collapsegallery[i].classList.contains("show"))
+                    {
+                        console.log('found');
+                        // collapsegallery[i].classList.remove("show");
+                        new bootstrap.Collapse(collapsegallery[i]).hide();
+                    }
+                    
+                }
+
             });
 
-            new VenoBox({
-                selector: ".venobox"
-            });
+
         }) 
+
+        
     }
     else{
+        targetsectionfilters.innerHTML='';
         targetbutton.setAttribute("customattribute", "0");
     }
 
@@ -598,9 +705,6 @@ function pokemontwoDApi(pokemons)
 
     }
 }
-
-
-
 
 
 

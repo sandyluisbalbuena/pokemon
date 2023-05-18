@@ -439,3 +439,51 @@ swiper-container {
     border: none !important;
     box-shadow: none !important;
 }
+
+.gallery1 {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.gallery2 {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.gallery3 {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.gallery4 {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.gallery5 {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.gallery6 {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.gallery7 {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.gallery8 {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.img2dpokemon {
+    margin: 10px;
+}
+
+.form-check-label {
+    cursor: pointer;
+}

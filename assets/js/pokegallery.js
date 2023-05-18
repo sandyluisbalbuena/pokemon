@@ -110,10 +110,7 @@ $(document).ready(function(){
     $('.filter').click(function(){
         var category = $(this).attr('data-category');
         $('.gallery').isotope({ filter: category });
-        // venoboxinit();
     });
-
-
    
 });
 
