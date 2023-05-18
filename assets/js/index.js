@@ -532,7 +532,7 @@ function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
 
             pokemonNames.forEach((pokemon) => {
                 // newElement.innerHTML += '<div class="col-1"><img src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/1x/'+pokemon.name+'.png" style="width:200%;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="'+pokemon.name+'" title="'+pokemon.name+'"></div>';
-                newElement.innerHTML += '<div href="https://img.pokemondb.net/sprites/home/normal/'+pokemon.name+'.png" class="col-1 venobox" data-gall="mypokemon2dgallery" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Hello! Im '+pokemon.name.charAt(0).toUpperCase()+ pokemon.name.slice(1)+'!"><img id="'+pokemon.name+'png" class="img2dpokemon" src="https://img.pokemondb.net/sprites/home/normal/'+pokemon.name+'.png" style="width:200%;"></div>';
+                newElement.innerHTML += '<div href="https://img.pokemondb.net/sprites/home/normal/'+pokemon.name+'.png" class="col-xl-1 col-lg-1 col-md-6 col-sm-12 col-xs-12 venobox" data-gall="mypokemon2dgallery" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Hello! Im '+pokemon.name.charAt(0).toUpperCase()+ pokemon.name.slice(1)+'!"><img id="'+pokemon.name+'png" class="img2dpokemon" src="https://img.pokemondb.net/sprites/home/normal/'+pokemon.name+'.png" style="width:100%;"></div>';
             });
 
             targetsection.appendChild(newElement);
