@@ -11,10 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.4/venobox.css" integrity="sha512-FklhNXzHcdzrbf6AqtmZo3hOse+bIr/ofmEpzZmNWftOTsj8qWasNgJN6Y8d71grmcZZZa1bbHbXFbTTPCa3pA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
@@ -35,9 +35,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#" disabled>Home</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="pokegallery.html">PokeGallery</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="pokecard2.html">PokeCard</a>
                     </li>
@@ -65,6 +65,108 @@
 
         <div class="paper1">
             <div class="container">
+
+                <section>
+
+                    <div class="container">
+
+                        <div class="row">
+
+                            <!-- <div class="col-12 btn-group text-white" role="group" aria-label="Basic example">
+                                <button class="filter btn" style="background-color: rgb(232, 187, 128);" data-category="*">All</button>
+                                <button class="filter btn" style="background-color: #408861;" data-category=".grass">Grass</button>
+                                <button class="filter btn" style="background-color: #F66A03;" data-category=".fire">Fire</button>
+                                <button class="filter btn" style="background-color: #87E0FF;" data-category=".water">Water</button>
+                            </div> -->
+
+                            <div class="col-12 mt-5">
+
+                                <div class="card-body border p-3" style="border-radius: 5px;">
+
+                                    <h2>Pokemon Search</h2>
+
+                                    <hr>
+
+                                    <div id="pokemonFilters" style="overflow-x: auto; overflow-y: hidden;white-space: nowrap;">
+                                       
+                                    </div>
+                                    <hr>
+
+                                    <div class="container">
+                                        <bs5-grid-row>
+                                            <div class="row mt-5">
+
+                                                <div class="col-xm-4 col-lg-4 col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+
+                                                    <select id="generationSelect" class="form-select d-block d-lg-none" aria-label="Default select example">
+                                                        <option value=""></option>
+                                                        <option data-start="0" data-end="151" data-target="pokemontwoDApi" data-spinner="gen1spinner" data-button="gen1btn">Generation 1</option>
+                                                        <option  data-start="151" data-end="100" data-target="pokemontwoDApi" data-spinner="gen2spinner" data-button="gen2btn">Generation 2</option>
+                                                        <option  data-start="251" data-end="135" data-target="pokemontwoDApi" data-spinner="gen3spinner" data-button="gen3btn">Generation 3</option>
+                                                        <option  data-start="386" data-end="107" data-target="pokemontwoDApi" data-spinner="gen4spinner" data-button="gen4btn">Generation 4</option>
+                                                        <option  data-start="493" data-end="156" data-target="pokemontwoDApi" data-spinner="gen5spinner" data-button="gen5btn">Generation 5</option>
+                                                        <option  data-start="649" data-end="72" data-target="pokemontwoDApi" data-spinner="gen6spinner" data-button="gen6btn">Generation 6</option>
+                                                        <option  data-start="721" data-end="86" data-target="pokemontwoDApi" data-spinner="gen7spinner" data-button="gen7btn">Generation 7</option>
+                                                        <option  data-start="807" data-end="96" data-target="pokemontwoDApi" data-spinner="gen8spinner" data-button="gen8btn">Generation 8</option>
+                                                    </select>
+                                                    
+                                                    <div class="d-none d-lg-block">
+                                                        <button id="gen1btn" class="btn btn-primary" type="button"style="width: 100%;" onclick="getpokemon(0,151,'pokemontwoDApi','gen1spinner','gen1btn')">
+                                                            <div style="display: flex; justify-content: space-between;">Generation 1 <div id="gen1spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                                        </button>
+                                                    
+                                                        <button id="gen2btn" class="btn btn-primary" type="button"style="width: 100%;" onclick="getpokemon(151,100,'pokemontwoDApi','gen2spinner','gen2btn')">
+                                                            <div style="display: flex; justify-content: space-between;">Generation 2 <div id="gen2spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                                        </button>
+                                                    
+                                                        <button id="gen3btn" class="btn btn-primary" type="button"style="width: 100%;" onclick="getpokemon(251,135,'pokemontwoDApi','gen3spinner','gen3btn')">
+                                                            <div style="display: flex; justify-content: space-between;">Generation 3 <div id="gen3spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                                        </button>
+                                                    
+                                                        <button id="gen4btn" class="btn btn-primary" type="button"style="width: 100%;" onclick="getpokemon(386,107,'pokemontwoDApi','gen4spinner','gen4btn')">
+                                                            <div style="display: flex; justify-content: space-between;">Generation 4 <div id="gen4spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                                        </button>
+                                                    
+                                                        <button id="gen5btn" class="btn btn-primary" type="button"style="width: 100%;" onclick="getpokemon(493,156,'pokemontwoDApi','gen5spinner','gen5btn')">
+                                                            <div style="display: flex; justify-content: space-between;">Generation 5 <div id="gen5spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                                        </button>
+                                                    
+                                                        <button id="gen6btn" class="btn btn-primary" type="button"style="width: 100%;" onclick="getpokemon(649,72,'pokemontwoDApi','gen6spinner','gen6btn')">
+                                                            <div style="display: flex; justify-content: space-between;">Generation 6 <div id="gen6spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                                        </button>
+                                                    
+                                                        <button id="gen7btn" class="btn btn-primary" type="button"style="width: 100%;" onclick="getpokemon(721,86,'pokemontwoDApi','gen7spinner','gen7btn')">
+                                                            <div style="display: flex; justify-content: space-between;">Generation 7 <div id="gen7spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                                        </button>
+                                                    
+                                                        <button id="gen8btn" class="btn btn-primary" type="button"style="width: 100%;" onclick="getpokemon(807,96,'pokemontwoDApi','gen8spinner','gen8btn')">
+                                                            <div style="display: flex; justify-content: space-between;">Generation 8 <div id="gen8spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
+                                                        </button>
+                                                    </div>
+                                                </div>
+                    
+                                                <div class="col-xm-8 col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                    
+                                                    <div class="pokemon2dgallery" id="collapseExample1">
+                                                        <div class="gallery1" id="pokemontwoDApi">
+                                                        </div>
+                                                    </div>
+                    
+                                                </div>
+                                                
+                                            </div>
+                                        </bs5-grid-row>
+                                    </div>
+                                    
+                                </div>  
+
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                </section>
 
                 <section>
                     <div class="row">
@@ -266,130 +368,6 @@
                             </div>
                         </div>
                     </div>
-                </section>
-
-                <section>
-
-                    <div class="container">
-
-                        <div class="row">
-                            <!-- <div class="col-12 btn-group text-white" role="group" aria-label="Basic example">
-                                <button class="filter btn" style="background-color: rgb(232, 187, 128);" data-category="*">All</button>
-                                <button class="filter btn" style="background-color: #408861;" data-category=".grass">Grass</button>
-                                <button class="filter btn" style="background-color: #F66A03;" data-category=".fire">Fire</button>
-                                <button class="filter btn" style="background-color: #87E0FF;" data-category=".water">Water</button>
-                            </div> -->
-
-                            <div class="col-12 mt-5">
-
-                                <div class="card-body border p-3" style="border-radius: 5px;">
-
-                                    <h4>Filter</h4>
-
-                                    <hr>
-
-                                    <div id="pokemonFilters">
-                                       
-                                    </div>
-                                    
-                                </div>  
-
-                            </div>
-
-                        </div>
-
-                        <div class="row mt-5">
-
-                            <div class="col-xm-6 col-lg-6 col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
-                                <p>
-                                    <button id="gen1btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(0,151,'pokemontwoDApi','gen1spinner','gen1btn')">
-                                        <div style="display: flex; justify-content: space-between;">Generation 1 <div id="gen1spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
-                                    </button>
-                                </p>
-                                <div class="collapse pokemon2dgallery" id="collapseExample1">
-                                    <div class="gallery1" id="pokemontwoDApi">
-                                    </div>
-                                </div>
-
-                                <p>
-                                    <button id="gen3btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(251,135,'pokemontwoDApithree','gen3spinner','gen3btn')">
-                                        <div style="display: flex; justify-content: space-between;">Generation 3 <div id="gen3spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
-                                    </button>
-                                </p>
-                                <div class="collapse pokemon2dgallery" id="collapseExample3">
-                                    <div class="gallery3"  id="pokemontwoDApithree">
-                                    </div>
-                                </div>
-
-                                <p>
-                                    <button id="gen5btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(493,156,'pokemontwoDApifive','gen5spinner','gen5btn')">
-                                        <div style="display: flex; justify-content: space-between;">Generation 5 <div id="gen5spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
-                                    </button>
-                                </p>
-                                <div class="collapse pokemon2dgallery" id="collapseExample5">
-                                    <div class="gallery5"  id="pokemontwoDApifive">
-                                    </div>
-                                </div>
-
-                                <p>
-                                    <button id="gen7btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(721,86,'pokemontwoDApiseven','gen7spinner','gen7btn')">
-                                        <div style="display: flex; justify-content: space-between;">Generation 7 <div id="gen7spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
-                                    </button>
-                                </p>
-                                <div class="collapse pokemon2dgallery" id="collapseExample7">
-                                    <div class="gallery7"  id="pokemontwoDApiseven">
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-xm-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                <p>
-                                    <button id="gen2btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(151,100,'pokemontwoDApitwo','gen2spinner','gen2btn')">
-                                        <div style="display: flex; justify-content: space-between;">Generation 2 <div id="gen2spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
-                                    </button>
-                                </p>
-                                <div class="collapse pokemon2dgallery" id="collapseExample2">
-                                    <div class="gallery2"  id="pokemontwoDApitwo">
-                                    </div>
-                                </div>
-
-                                <p>
-                                    <button id="gen4btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(386,107,'pokemontwoDApifour','gen4spinner','gen4btn')">
-                                        <div style="display: flex; justify-content: space-between;">Generation 4 <div id="gen4spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
-                                    </button>
-                                </p>
-                                <div class="collapse pokemon2dgallery" id="collapseExample4">
-                                    <div class="gallery4"  id="pokemontwoDApifour">
-                                    </div>
-                                </div>
-
-                                <p>
-                                    <button id="gen6btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(649,72,'pokemontwoDApisix','gen6spinner','gen6btn')">
-                                        <div style="display: flex; justify-content: space-between;">Generation 6 <div id="gen6spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
-                                    </button>
-                                </p>
-                                <div class="collapse pokemon2dgallery" id="collapseExample6">
-                                    <div class="gallery6"  id="pokemontwoDApisix">
-                                    </div>
-                                </div>
-
-                                <p>
-                                    <button id="gen8btn" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample8" aria-expanded="false" aria-controls="collapseExample" style="width: 100%;" customattribute="0" onclick="getpokemon(807,96,'pokemontwoDApieight','gen8spinner','gen8btn')">
-                                        <div style="display: flex; justify-content: space-between;">Generation 8 <div id="gen8spinner" class="spinner-border text-white" role="status" style="display: none;"></div></div>   
-                                    </button>
-                                </p>
-                                <div class="collapse pokemon2dgallery" id="collapseExample8">
-                                    <div class="gallery8"  id="pokemontwoDApieight">
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                        
-                    </div>
-
                 </section>
 
                 <!-- <section>
@@ -656,23 +634,18 @@
         </div>
 
     </footer>
-
  
     <!-- Modal -->
     <div class="modal modal-lg fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-keyboard="false"  data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog modal-dialog-scrollable">
             <div class="modal-content pokemonModal">
                 <div class="container"  style="text-align: right;">
-                    <div class="row">
-                        <div class="col-1 offset-11">
-                            <button type="button" class="btn-close mx-3" data-bs-dismiss="modal" aria-label="Close"  onclick="clearTableData()"></button>
-                        </div>
+                    <div class="row" style="float: right;">
+                        <button type="button" class="btn-close mx-3" data-bs-dismiss="modal" aria-label="Close"  onclick="clearTableData()"></button>
                     </div>
                 </div>
                 
                 <div class="modal-header" style="border: none;">
-
-
 
                     <div class="d-none d-lg-block" style="width: 100%;">
                         <ul class="nav nav-tabs mynav" id="mytabs">
@@ -776,7 +749,6 @@
                                        
                                     </div> -->
 
-
                                     <div id="description" class="card-body tab">
                                         <div style="width: 100%;">
                                             <div class="row">
@@ -868,7 +840,6 @@
     
     <!-- <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script> -->
-
 
     <script src="assets/js/index.js"></script>
 

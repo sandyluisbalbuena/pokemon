@@ -14,7 +14,7 @@ function handleKeyPress(event) {
 var videoherolarge = document.getElementById("myVideo");
 
 videoherolarge.addEventListener("ended", function() {
-  video.style.display = "none"; // Change display property to "none" when video ends
+//   video.style.display = "none"; // Change display property to "none" when video ends
   document.getElementById("heroimglg").style.display = "none"; // Change display property to "none" when video ends
 });
 

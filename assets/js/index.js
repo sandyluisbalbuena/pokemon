@@ -6,7 +6,6 @@ window.addEventListener("load", function(){
     loader.style.display = "none";
 });
 
-
 const multipleItemCarousel = document.querySelector('#carouselExampleInterval');
 
 if(window.matchMedia("(min-width:768px)").matches){
@@ -486,40 +485,26 @@ function modalDescription(descriptionString)
     });
 }
 
-var targetsection;
-var spinner;
-var targetbutton;
-var customAttributeValue;
-
 function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
 {
     let targetsectionfilters = document.getElementById('pokemonFilters');
 
-    targetsection = document.getElementById(targetElement);
-    spinner = document.getElementById(spinnerId);
-    targetbutton = document.getElementById(button);
-    customAttributeValue = targetbutton.getAttribute("customattribute");
+    let targetsection = document.getElementById(targetElement);
+    let spinner = document.getElementById(spinnerId);
+    let targetbutton = document.getElementById(button);
+    // let customAttributeValue = targetbutton.getAttribute("customattribute");
 
     var collapsegallery = document.getElementsByClassName('pokemon2dgallery');
-
-    console.log(collapsegallery);
-
-   
-
-
-
     var className = targetsection.classList;
-
-
     var $grid = $('.'+className.value);
-
+    $('.'+className.value).isotope({ filter: '*' });
     $grid.isotope({
         isResizeBound: false,
         layoutMode: 'fitRows',
     });
 
 
-    if(customAttributeValue == 0){
+    // if(customAttributeValue == 0){
         spinner.style.display = 'block';
         // targetsectionfilters.innerHTML='<div class="spinner-border" role="status"></div>';
         targetsectionfilters.innerHTML='';
@@ -548,6 +533,8 @@ function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
 
             let datatypesfromresponse = [];
 
+            // let elementtargetsectionfilters = targetsectionfilters.innerHTML='<div class="row">';
+
             pokemonNames.forEach((pokemon) => {
 
                 axios.get(`https://pokeapi.co/api/v2/pokemon/`+pokemon.name)
@@ -558,16 +545,19 @@ function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
                     if (!datatypesfromresponse.includes(response.data.types[0].type.name)) {
                         datatypesfromresponse.push(response.data.types[0].type.name);
                         // datatypesfromresponse[pokemontypecounter] = response.data.types[0].type.name;
-                        targetsectionfilters.innerHTML += '<div class="form-check form-check-inline"><input class="filter form-check-input" type="checkbox" id="inlineCheckbox'+response.data.types[0].type.name+'" data-category=".'+response.data.types[0].type.name+'" value="option1" data-is-checked="0"><label class="form-check-label" for="inlineCheckbox'+response.data.types[0].type.name+'"><img src="assets/images/pokemonTypes/'+response.data.types[0].type.name+'.png" width="50%"></label></div>';
+                        targetsectionfilters.innerHTML += '<div class="form-check form-check-inline" style="overflow:auto;"><input class="filter form-check-input" type="checkbox" id="inlineCheckbox'+response.data.types[0].type.name+'" data-category=".'+response.data.types[0].type.name+'" value="option1" data-is-checked="0"><label class="form-check-label" for="inlineCheckbox'+response.data.types[0].type.name+'"><div class="d-flex"><img class="d-none d-md-block" src="assets/images/pokemonTypes/'+response.data.types[0].type.name+'.png" width="15%" height="15%"> <img class="col-7" src="assets/images/pokemonTypes/'+response.data.types[0].type.name+'text.png" width="25%" height="15%"></div></label></div>';
                     }
 
+
                     newElementpokemon.classList.add(response.data.types[0].type.name); 
-                    newElementpokemon.classList.add('col-xl-1'); 
-                    newElementpokemon.classList.add('col-lg-2'); 
-                    newElementpokemon.classList.add('col-md-2'); 
+                    newElementpokemon.classList.add('col-xs-1'); 
                     newElementpokemon.classList.add('col-sm-2'); 
-                    newElementpokemon.classList.add('col-xs-2'); 
+                    newElementpokemon.classList.add('col-md-2'); 
+                    newElementpokemon.classList.add('col-lg-1'); 
+                    newElementpokemon.classList.add('col-xl-1'); 
+                    newElementpokemon.classList.add('hvr-float'); 
                     newElementpokemon.classList.add('venobox'); 
+                    newElementpokemon.classList.add('m-1'); 
                     newElementpokemon.setAttribute('href', 'https://img.pokemondb.net/sprites/home/normal/'+pokemon.name+'.png');
                     newElementpokemon.setAttribute('data-gall', 'mypokemon2dgallery');
                     newElementpokemon.setAttribute('data-bs-toggle', 'tooltip');
@@ -652,15 +642,14 @@ function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
 
             });
 
-
         }) 
 
         
-    }
-    else{
-        targetsectionfilters.innerHTML='';
-        targetbutton.setAttribute("customattribute", "0");
-    }
+    // }
+    // else{
+    //     targetsectionfilters.innerHTML='';
+    //     targetbutton.setAttribute("customattribute", "0");
+    // }
 
 }
 
@@ -705,6 +694,21 @@ function pokemontwoDApi(pokemons)
 
     }
 }
+
+var selectElement = document.getElementById("generationSelect");
+
+selectElement.addEventListener("change", function() {
+    let selectedOption = selectElement.selectedOptions[0];
+    let start = selectedOption.dataset.start;
+    let end = selectedOption.dataset.end;
+    let target = selectedOption.dataset.target;
+    let spinner = selectedOption.dataset.spinner;
+    let button = selectedOption.dataset.button;
+
+    getpokemon(start,end,target,spinner,button);
+
+    // console.log(start,end,target,spinner,button );
+});
 
 
 
