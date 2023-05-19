@@ -18,6 +18,11 @@ videoherolarge.addEventListener("ended", function() {
   document.getElementById("heroimglg").style.display = "none"; // Change display property to "none" when video ends
 });
 
+$(document).ready(function(){
+    pokemonCardApi();
+})
+
+
 
 function pokemonCardApi()
 {
@@ -25,13 +30,21 @@ function pokemonCardApi()
 
     const name = document.getElementById('pokemonName');
 
+   
+
     const table = document.getElementById("myTable");
     const tbody = table.getElementsByTagName("tbody")[0];
         
     tbody.innerHTML = "";
 
     // Constant URL value for JAAS API
-    let RAPIDAPI_API_URL = 'https://api.pokemontcg.io/v1/cards?name='+name.value.toLowerCase().trim();
+
+    if(name.value == undefined){
+        var RAPIDAPI_API_URL = 'https://api.pokemontcg.io/v1/cards?name=pikachu';
+    }
+    else{
+        var RAPIDAPI_API_URL = 'https://api.pokemontcg.io/v1/cards?name='+name.value.toLowerCase().trim();
+    }
 
     // Making a GET request using an axios instance from a connected library
 

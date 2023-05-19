@@ -64,7 +64,7 @@
         </div>
 
         <div class="hero d-block d-lg-none">
-            <video autoplay muted loop style="background-color: aliceblue;">
+            <video autoplay muted loop style="background-color: aliceblue; width: 100%;">
                 <source src="assets/video/scarlet-violet-small.mp4" type="video/mp4">
             </video>
         </div>
@@ -75,7 +75,8 @@
             <div class="container">
 
                 <div class="row" id="cardsearch">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
                         <div class="card">
                             <div class="card-body">
                                 <div class="mb-3">
@@ -88,7 +89,7 @@
                         </div>
                     </div>
     
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
                         <div id="cardGallery" class="cardGallery" style="justify-content: center;">
     
                             <table class="table table-hover" id="myTable"  tyle="height: 400px; overflow: auto;">
@@ -116,22 +117,7 @@
                     </div>
                 </div>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-bs-backdrop="static" data-bs-keyboard="false" >
-                    <div class="modal-dialog  modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="destroythreeDfunction()"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div id="canvas-container" class="container"></div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" data-bs-dismiss="modal" onclick="destroythreeDfunction()">Close</button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
+                
 
             </div>
         </div>
@@ -206,6 +192,36 @@
     <button class="btn" id="back-to-top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-bs-backdrop="static" data-bs-keyboard="false" >
+        <div class="modal-dialog  modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="destroythreeDfunction()"></button>
+            </div>
+            <div class="modal-body">
+                <div id="canvas-container" class="container"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal" onclick="destroythreeDfunction()">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 
