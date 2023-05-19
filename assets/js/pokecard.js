@@ -30,8 +30,6 @@ function pokemonCardApi()
 
     const name = document.getElementById('pokemonName');
 
-   
-
     const table = document.getElementById("myTable");
     const tbody = table.getElementsByTagName("tbody")[0];
         

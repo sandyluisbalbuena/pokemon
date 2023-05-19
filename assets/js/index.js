@@ -8,198 +8,198 @@ window.addEventListener("load", function(){
 
 const multipleItemCarousel = document.querySelector('#carouselExampleInterval');
 
-if(window.matchMedia("(min-width:768px)").matches){
-    const carousel = new bootstrap.Carousel(multipleItemCarousel, {
-        interval: false
-    })
+// if(window.matchMedia("(min-width:768px)").matches){
+//     const carousel = new bootstrap.Carousel(multipleItemCarousel, {
+//         interval: false
+//     })
 
-    var carouselWidth = $('.carousel-inner')[0].scrollWidth;
-    var cardWidth = $('.carousel-item').width();
+//     var carouselWidth = $('.carousel-inner')[0].scrollWidth;
+//     var cardWidth = $('.carousel-item').width();
 
-    var scrollPosition = 0;
+//     var scrollPosition = 0;
 
-    $('.carousel-control-next').on('click', function(){
-        if(scrollPosition < (carouselWidth - (cardWidth*4))){
-            console.log('next');
-            scrollPosition = scrollPosition + cardWidth;
-            $('.carousel-inner').animate({scrollLeft: scrollPosition},600);
-        }
-    });
+//     $('.carousel-control-next').on('click', function(){
+//         if(scrollPosition < (carouselWidth - (cardWidth*4))){
+//             console.log('next');
+//             scrollPosition = scrollPosition + cardWidth;
+//             $('.carousel-inner').animate({scrollLeft: scrollPosition},600);
+//         }
+//     });
 
-    $('.carousel-control-prev').on('click', function(){
-        if(scrollPosition > 0){
-            console.log('prev');
-            scrollPosition = scrollPosition - cardWidth;
-            $('.carousel-inner').animate({scrollLeft: scrollPosition},600);
-        }
-    }); 
-}
-else{
-    $(multipleItemCarousel).addClass('slide');
-}
+//     $('.carousel-control-prev').on('click', function(){
+//         if(scrollPosition > 0){
+//             console.log('prev');
+//             scrollPosition = scrollPosition - cardWidth;
+//             $('.carousel-inner').animate({scrollLeft: scrollPosition},600);
+//         }
+//     }); 
+// }
+// else{
+//     $(multipleItemCarousel).addClass('slide');
+// }
 
-const item1 = document.getElementById('item1');
-const item2 = document.getElementById('item2');
-const item3 = document.getElementById('item3');
-const item4 = document.getElementById('item4');
-const item5 = document.getElementById('item5');
-const item6 = document.getElementById('item6');
-const item7 = document.getElementById('item7');
-const item8 = document.getElementById('item8');
-const item9 = document.getElementById('item9');
-const item10 = document.getElementById('item10');
-const item11 = document.getElementById('item11');
-const item12 = document.getElementById('item12');
-const item13 = document.getElementById('item13');
-const item14 = document.getElementById('item14');
-const modal = document.querySelector('.modal');
-const modalTitle = modal.querySelector('.modal-title');
-const modalImage = modal.querySelector('.modal-pokemon');
-const modalHeader = modal.querySelector('.modal-header');
-const tabTable = document.getElementById('myTable');
+// const item1 = document.getElementById('item1');
+// const item2 = document.getElementById('item2');
+// const item3 = document.getElementById('item3');
+// const item4 = document.getElementById('item4');
+// const item5 = document.getElementById('item5');
+// const item6 = document.getElementById('item6');
+// const item7 = document.getElementById('item7');
+// const item8 = document.getElementById('item8');
+// const item9 = document.getElementById('item9');
+// const item10 = document.getElementById('item10');
+// const item11 = document.getElementById('item11');
+// const item12 = document.getElementById('item12');
+// const item13 = document.getElementById('item13');
+// const item14 = document.getElementById('item14');
+// const modal = document.querySelector('.modal');
+// const modalTitle = modal.querySelector('.modal-title');
+// const modalImage = modal.querySelector('.modal-pokemon');
+// const modalHeader = modal.querySelector('.modal-header');
+// const tabTable = document.getElementById('myTable');
 
-var string;
+// var string;
 
 
-item1.addEventListener('click', () => {
-    const name = item1.getAttribute('data-name');
-    pokemonApi(name);
+// item1.addEventListener('click', () => {
+//     const name = item1.getAttribute('data-name');
+//     pokemonApi(name);
 
-    modalTitle.textContent = name;
-    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+//     modalTitle.textContent = name;
+//     modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
 
-    modal.style.display = 'block';
-});
+//     modal.style.display = 'block';
+// });
 
-item2.addEventListener('click', () => {
-    const name = item2.getAttribute('data-name');
-    pokemonApi(name);
+// item2.addEventListener('click', () => {
+//     const name = item2.getAttribute('data-name');
+//     pokemonApi(name);
 
-    modalTitle.textContent = name;
-    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+//     modalTitle.textContent = name;
+//     modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
     
-    modal.style.display = 'block';
-});
+//     modal.style.display = 'block';
+// });
 
-item3.addEventListener('click', () => {
-    const name = item3.getAttribute('data-name');
-    pokemonApi(name);
+// item3.addEventListener('click', () => {
+//     const name = item3.getAttribute('data-name');
+//     pokemonApi(name);
 
-    modalTitle.textContent = name;
-    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+//     modalTitle.textContent = name;
+//     modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
 
-    modal.style.display = 'block';
-});
+//     modal.style.display = 'block';
+// });
 
-item4.addEventListener('click', () => {
-    const name = item4.getAttribute('data-name');
-    pokemonApi(name);
+// item4.addEventListener('click', () => {
+//     const name = item4.getAttribute('data-name');
+//     pokemonApi(name);
 
-    modalTitle.textContent = name;
-    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+//     modalTitle.textContent = name;
+//     modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
 
-    modal.style.display = 'block';
-});
+//     modal.style.display = 'block';
+// });
 
-item5.addEventListener('click', () => {
-    const name = item5.getAttribute('data-name');
-    pokemonApi(name);
+// item5.addEventListener('click', () => {
+//     const name = item5.getAttribute('data-name');
+//     pokemonApi(name);
 
-    modalTitle.textContent = name;
-    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+//     modalTitle.textContent = name;
+//     modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
 
-    modal.style.display = 'block';
-});
+//     modal.style.display = 'block';
+// });
 
-item6.addEventListener('click', () => {
-    const name = item6.getAttribute('data-name');
-    pokemonApi(name);
+// item6.addEventListener('click', () => {
+//     const name = item6.getAttribute('data-name');
+//     pokemonApi(name);
 
-    modalTitle.textContent = name;
-    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+//     modalTitle.textContent = name;
+//     modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
 
-    modal.style.display = 'block';
-});
+//     modal.style.display = 'block';
+// });
 
-item7.addEventListener('click', () => {
-    const name = item7.getAttribute('data-name');
-    pokemonApi(name);
+// item7.addEventListener('click', () => {
+//     const name = item7.getAttribute('data-name');
+//     pokemonApi(name);
 
-    modalTitle.textContent = name;
-    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+//     modalTitle.textContent = name;
+//     modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
 
-    modal.style.display = 'block';
-});
+//     modal.style.display = 'block';
+// });
 
-item8.addEventListener('click', () => {
-    const name = item8.getAttribute('data-name');
-    pokemonApi(name);
+// item8.addEventListener('click', () => {
+//     const name = item8.getAttribute('data-name');
+//     pokemonApi(name);
 
-    modalTitle.textContent = name;
-    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+//     modalTitle.textContent = name;
+//     modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
 
-    modal.style.display = 'block';
-});
+//     modal.style.display = 'block';
+// });
 
-item9.addEventListener('click', () => {
-    const name = item9.getAttribute('data-name');
-    pokemonApi(name);
+// item9.addEventListener('click', () => {
+//     const name = item9.getAttribute('data-name');
+//     pokemonApi(name);
 
-    modalTitle.textContent = name;
-    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+//     modalTitle.textContent = name;
+//     modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
 
-    modal.style.display = 'block';
-});
+//     modal.style.display = 'block';
+// });
 
-item10.addEventListener('click', () => {
-    const name = item10.getAttribute('data-name');
-    pokemonApi(name);
+// item10.addEventListener('click', () => {
+//     const name = item10.getAttribute('data-name');
+//     pokemonApi(name);
 
-    modalTitle.textContent = name;
-    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+//     modalTitle.textContent = name;
+//     modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
 
-    modal.style.display = 'block';
-});
+//     modal.style.display = 'block';
+// });
 
-item11.addEventListener('click', () => {
-    const name = item11.getAttribute('data-name');
-    pokemonApi(name);
+// item11.addEventListener('click', () => {
+//     const name = item11.getAttribute('data-name');
+//     pokemonApi(name);
 
-    modalTitle.textContent = name;
-    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+//     modalTitle.textContent = name;
+//     modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
 
-    modal.style.display = 'block';
-});
+//     modal.style.display = 'block';
+// });
 
-item12.addEventListener('click', () => {
-    const name = item12.getAttribute('data-name');
-    pokemonApi(name);
+// item12.addEventListener('click', () => {
+//     const name = item12.getAttribute('data-name');
+//     pokemonApi(name);
 
-    modalTitle.textContent = name;
-    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+//     modalTitle.textContent = name;
+//     modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
 
-    modal.style.display = 'block';
-});
+//     modal.style.display = 'block';
+// });
 
-item13.addEventListener('click', () => {
-    const name = item13.getAttribute('data-name');
-    pokemonApi(name);
+// item13.addEventListener('click', () => {
+//     const name = item13.getAttribute('data-name');
+//     pokemonApi(name);
 
-    modalTitle.textContent = name;
-    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+//     modalTitle.textContent = name;
+//     modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
 
-    modal.style.display = 'block';
-});
+//     modal.style.display = 'block';
+// });
 
-item14.addEventListener('click', () => {
-    const name = item14.getAttribute('data-name');
-    pokemonApi(name);
+// item14.addEventListener('click', () => {
+//     const name = item14.getAttribute('data-name');
+//     pokemonApi(name);
 
-    modalTitle.textContent = name;
-    modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
+//     modalTitle.textContent = name;
+//     modalImage.setAttribute('src', "https://www.professorlotus.com/Sprites/"+name+".gif");
 
-    modal.style.display = 'block';
-});
+//     modal.style.display = 'block';
+// });
 
 
 function pokemonApi(name)
@@ -488,6 +488,7 @@ function modalDescription(descriptionString)
 function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
 {
     let targetsectionfilters = document.getElementById('pokemonFilters');
+    let generationSelectFilter = document.getElementById('generationSelectFilter');
 
     let targetsection = document.getElementById(targetElement);
     let spinner = document.getElementById(spinnerId);
@@ -528,8 +529,8 @@ function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
             const pokemonNames = response.data.results;
             var newElement = document.createElement('div');
             newElement.classList.add('row');
-
-            let pokemontypecounter = 0;
+            newElement.classList.add('d-none');
+            newElement.setAttribute('id', 'rowfor2dimages');
 
             let datatypesfromresponse = [];
 
@@ -544,10 +545,9 @@ function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
 
                     if (!datatypesfromresponse.includes(response.data.types[0].type.name)) {
                         datatypesfromresponse.push(response.data.types[0].type.name);
-                        // datatypesfromresponse[pokemontypecounter] = response.data.types[0].type.name;
                         targetsectionfilters.innerHTML += '<div class="form-check form-check-inline" style="overflow:auto;user-select: none;"><input class="filter form-check-input" type="checkbox" id="inlineCheckbox'+response.data.types[0].type.name+'" data-category=".'+response.data.types[0].type.name+'" value="option1" data-is-checked="0"><label class="form-check-label" for="inlineCheckbox'+response.data.types[0].type.name+'"><div class="d-flex"><img class="d-none d-md-block" src="assets/images/pokemonTypes/'+response.data.types[0].type.name+'.png" width="15%" height="15%"> <img class="col-7 col-md-3" src="assets/images/pokemonTypes/'+response.data.types[0].type.name+'text.png" width="25%" height="15%"></div></label></div>';
+                        // generationSelectFilter.innerHTML +=
                     }
-
 
                     newElementpokemon.classList.add(response.data.types[0].type.name); 
                     newElementpokemon.classList.add('col-xs-1'); 
@@ -567,9 +567,9 @@ function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
                     newElementpokemon.setAttribute('data-gall', 'mypokemon2dgallery');
                     newElementpokemon.setAttribute('style', 'user-select: none;');
 
-
-                    // newElement.innerHTML += '<div class="col-1"><img src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/1x/'+pokemon.name+'.png" style="width:200%;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="'+pokemon.name+'" title="'+pokemon.name+'"></div>';
+                    // newElementpokemon.innerHTML += '<div class="col-1"><img src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/1x/'+pokemon.name+'.png" style="width:200%;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="'+pokemon.name+'" title="'+pokemon.name+'"></div>';
                     newElementpokemon.innerHTML += '<img id="'+pokemon.name+'png" class="img2dpokemon" src="https://img.pokemondb.net/sprites/home/normal/'+pokemon.name+'.png" style="width:100%; height:100%;">';
+                    // newElementpokemon.innerHTML += '<img id="'+pokemon.name+'png" class="img2dpokemon" src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/1x/'+pokemon.name+'.png" style="width:100%; height:100%;">';
                     $grid.isotope( 'insert',newElementpokemon  );
 
                     newElement.appendChild(newElementpokemon);
@@ -591,6 +591,12 @@ function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
                         $('.filter').click(function(){
                             let elements = document.getElementsByClassName('filter');
                             let listofpokemontype = [];
+
+                            let rowfor2dimages = document.getElementById("rowfor2dimages");
+
+                            if (rowfor2dimages.classList.contains("d-none")) {
+                                rowfor2dimages.classList.remove("d-none");
+                            }
                         
                             for (let i = 0; i < elements.length; i++) {
                         
