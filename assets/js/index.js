@@ -545,7 +545,7 @@ function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
                     if (!datatypesfromresponse.includes(response.data.types[0].type.name)) {
                         datatypesfromresponse.push(response.data.types[0].type.name);
                         // datatypesfromresponse[pokemontypecounter] = response.data.types[0].type.name;
-                        targetsectionfilters.innerHTML += '<div class="form-check form-check-inline" style="overflow:auto;"><input class="filter form-check-input" type="checkbox" id="inlineCheckbox'+response.data.types[0].type.name+'" data-category=".'+response.data.types[0].type.name+'" value="option1" data-is-checked="0"><label class="form-check-label" for="inlineCheckbox'+response.data.types[0].type.name+'"><div class="d-flex"><img class="d-none d-md-block" src="assets/images/pokemonTypes/'+response.data.types[0].type.name+'.png" width="15%" height="15%"> <img class="col-7 col-md-3" src="assets/images/pokemonTypes/'+response.data.types[0].type.name+'text.png" width="25%" height="15%"></div></label></div>';
+                        targetsectionfilters.innerHTML += '<div class="form-check form-check-inline" style="overflow:auto;user-select: none;"><input class="filter form-check-input" type="checkbox" id="inlineCheckbox'+response.data.types[0].type.name+'" data-category=".'+response.data.types[0].type.name+'" value="option1" data-is-checked="0"><label class="form-check-label" for="inlineCheckbox'+response.data.types[0].type.name+'"><div class="d-flex"><img class="d-none d-md-block" src="assets/images/pokemonTypes/'+response.data.types[0].type.name+'.png" width="15%" height="15%"> <img class="col-7 col-md-3" src="assets/images/pokemonTypes/'+response.data.types[0].type.name+'text.png" width="25%" height="15%"></div></label></div>';
                     }
 
 
@@ -565,6 +565,7 @@ function getpokemon(pokemonStart, pokemonEnd, targetElement, spinnerId, button)
                     newElementpokemon.setAttribute('data-bs-custom-class', 'custom-tooltip');
                     newElementpokemon.setAttribute('data-bs-title', 'Hello! Im '+pokemon.name.charAt(0).toUpperCase()+ pokemon.name.slice(1)+'!');
                     newElementpokemon.setAttribute('data-gall', 'mypokemon2dgallery');
+                    newElementpokemon.setAttribute('style', 'user-select: none;');
 
 
                     // newElement.innerHTML += '<div class="col-1"><img src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/1x/'+pokemon.name+'.png" style="width:200%;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="'+pokemon.name+'" title="'+pokemon.name+'"></div>';
